@@ -1,0 +1,16 @@
+{% include "global/partials/head.html" %}
+{% include "global/partials/menu.html" %}
+
+{% if text %}
+    <h1 class="main_title">
+        {% block texto %} Base {% endblock texto %}
+    </h1>
+{% endif %}
+
+<main class="content">
+    {% block posts %}{% endblock posts %}
+</main>
+
+</body>
+
+</html>
