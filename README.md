@@ -229,3 +229,6 @@
 205. SQLite - comandos, placeholders e CRUD
 206. Docker - containers, MySQL, WSL2, PyMySQL, .env, comandos e CRUD
 207. Django - comandos básicos, iniciando um projeto, termos e organizações
+208. Agenda
+     1. Arquivos e configurações iniciais
+     2. Área de admin
