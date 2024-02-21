@@ -199,36 +199,47 @@
 199. openpyxl - Excel xlsx, xlsm, xltx e xltm
 200. Pillow - redimensionando imagens
 201. PySide6
-     1. Instalação
-     2. QApplication e QPushButton
-     3. QWidget e QLayout
-     4. QMainWindow e centralWidget
-     5. Signal e Slots
-     6. Classes e herança
+     - Instalação
+     - QApplication e QPushButton
+     - QWidget e QLayout
+     - QMainWindow e centralWidget
+     - Signal e Slots
+     - Classes e herança
 202. Calculadora
-     1. Janela principal com QMainWindow, QWidget e QVBoxLayout
-     2. Ajustes e boas práticas
-     3. PascalCase, camelCase ou snake_case
-     4. QLineEdit e o display
-     5. Criando um QLabel
-     6. Configurando o PyQt Dark Theme
-     7. Criando um botão com QPushButton
-     8. Criando uma grid de botões com QGridLayout
-     9. Preenchendo a grid de botões
-     10. Criando um Slot com dados para o Signal "clicked"
-     11. Permitindo apenas números válidos no display
-     12. QLabel, TYPE_CHECKING, getter/setter e Circular Imports
-     13. Configuração dos botões especiais
-     14. Botões especiais de operadores, clear e equation
-     15. Configuranado o botão igual e o número da direita
-     16. Configurando a potenciação
-     17. Configurando o "backspace" do display
-     18. Diálogos com o usuário com QMessageBox
+     - Janela principal com QMainWindow, QWidget e QVBoxLayout
+     - Ajustes e boas práticas
+     - PascalCase, camelCase ou snake_case
+     - QLineEdit e o display
+     - Criando um QLabel
+     - Configurando o PyQt Dark Theme
+     - Criando um botão com QPushButton
+     - Criando uma grid de botões com QGridLayout
+     - Preenchendo a grid de botões
+     - Criando um Slot com dados para o Signal "clicked"
+     - Permitindo apenas números válidos no display
+     - QLabel, TYPE_CHECKING, getter/setter e Circular Imports
+     - Configuração dos botões especiais
+     - Botões especiais de operadores, clear e equation
+     - Configuranado o botão igual e o número da direita
+     - Configurando a potenciação
+     - Configurando o "backspace" do display
+     - Diálogos com o usuário com QMessageBox
 203. QtDesigner
 204. QObject e QThread
 205. SQLite - comandos, placeholders e CRUD
 206. Docker - containers, MySQL, WSL2, PyMySQL, .env, comandos e CRUD
 207. Django - comandos básicos, iniciando um projeto, termos e organizações
 208. Agenda
-     1. Arquivos e configurações iniciais
-     2. Área de admin
+     - Arquivos e configurações iniciais
+     - Área de admin
+     - CRUD usando Django Shell
+     - Model Contact
+     - Model User
+     - Gerando dados aleatórios com Faker
+     - Package view e local_settings.py
+     - Aplicando CSS
+     - Injetando contatos na tela inicial
+     - Tabela dos contatos
+     - Página individual dos contatos
+     - Cabeçalho
+     
