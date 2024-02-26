@@ -1,1 +1,5 @@
 print(f"\n{20 * '-'}\n")
+
+source venv/Scripts/Activate 
+source venv/Scripts/Activate ; cd todo/aula208/
+source venv/Scripts/Activate ; cd todo/aula208/ ; python manage.py runserver
