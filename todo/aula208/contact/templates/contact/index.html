@@ -33,5 +33,9 @@
                 </tbody>
             </caption>
         </table>
+
+        {% if not contacts %}
+            Nenhum contato encontrado.
+        {% endif %}
     </div>
 {% endblock content %}
