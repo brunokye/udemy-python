@@ -242,4 +242,7 @@
      - Tabela dos contatos
      - Página individual dos contatos
      - Cabeçalho
+     - Filtros para pesquisa
+     - Organização do CRUD com urls
+     - Formulário para criação de contato
      
