@@ -4,26 +4,13 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
-    # first_name = forms.CharField(
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "class": "classe-a classe-b",
-    #             "placeholder": "Digite seu nome",
-    #         }
-    #     ),
-    #     label="Nome",
-    #     help_text="Digite seu nome",
-    # )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # self.fields["first_name"].widget.attrs.update(
-        #     {
-        #         "class": "classe-a classe-b",
-        #         "placeholder": "Digite seu nome",
-        #     }
-        # )
+    picture = forms.ImageField(
+        widget=forms.FileInput(
+            attrs={
+                "accept": "image/*",
+            }
+        )
+    )
 
     class Meta:
         model = Contact
@@ -34,16 +21,8 @@ class ContactForm(forms.ModelForm):
             "email",
             "description",
             "category",
+            "picture",
         )
-
-        # widgets = {
-        #     "first_name": forms.TextInput(
-        #         attrs={
-        #             "class": "classe-a classe-b",
-        #             "placeholder": "Digite seu nome",
-        #         }
-        #     )
-        # }
 
     def clean(self):
         cleaned_data = self.cleaned_data
@@ -58,10 +37,6 @@ class ContactForm(forms.ModelForm):
 
             self.add_error("first_name", msg)
             self.add_error("last_name", msg)
-
-        # self.add_error(
-        #     "first_name", ValidationError("Mensagem de erro", code="invalid")
-        # )
 
         return super().clean()
 
