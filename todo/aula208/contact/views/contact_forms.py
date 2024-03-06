@@ -53,4 +53,4 @@ def delete(request, contact_id):
         contact.delete()
         return redirect("contact:index")
 
-    return render(request, "contact/contact.html", context)
+    return render(request, "contact/detail.html", context)
