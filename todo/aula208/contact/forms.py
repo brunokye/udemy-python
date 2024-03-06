@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.contrib.auth import password_validation
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Contact
@@ -76,3 +77,87 @@ class RegisterForm(UserCreationForm):
             self.add_error("email", ValidationError("Email já cadastrado"))
 
         return email
+
+
+class RegisterUpdateForm(forms.ModelForm):
+    first_name = forms.CharField(
+        min_length=2,
+        max_length=30,
+        required=True,
+        help_text="Campo obrigatório.",
+        error_messages={"min_length": "Por favor, digite mais de 2 letras."},
+    )
+    last_name = forms.CharField(
+        min_length=2,
+        max_length=30,
+        required=True,
+        help_text="Campo obrigatório.",
+        error_messages={"min_length": "Por favor, digite mais de 2 letras."},
+    )
+
+    password1 = forms.CharField(
+        label="Password",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        help_text=password_validation.password_validators_help_text_html(),
+        required=False,
+    )
+
+    password2 = forms.CharField(
+        label="Password 2",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        help_text="Use a mesma senha digitada anteriormente.",
+        required=False,
+    )
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password1"])
+
+        if commit:
+            user.save()
+
+        return user
+
+    def clean(self):
+        password1 = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+
+        if password1 or password2:
+            if password1 != password2:
+                self.add_error(
+                    "password2",
+                    ValidationError("As senhas precisam ser iguais."),
+                )
+
+    def clean_email(self):
+        email = self.cleaned_data.get("email")
+        current_email = self.instance.email
+
+        if current_email != email:
+            if User.objects.filter(email=email).exists():
+                self.add_error(
+                    "email", ValidationError("Email já cadastrado.")
+                )
+        return email
+
+    def clean_password1(self):
+        password = self.cleaned_data.get("password1")
+
+        if password:
+            try:
+                password_validation.validate_password(password)
+            except ValidationError as error:
+                self.add_error("password1", ValidationError(error))
+
+        return password
+
+    class Meta:
+        model = User
+        fields = (
+            "first_name",
+            "last_name",
+            "email",
+            "username",
+        )

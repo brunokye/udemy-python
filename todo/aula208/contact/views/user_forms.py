@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
-from contact.forms import RegisterForm
+from contact.forms import RegisterForm, RegisterUpdateForm
 
 
 def register(request):
@@ -32,6 +32,20 @@ def login(request):
             return redirect("contact:index")
 
     return render(request, "contact/login.html", {"form": form})
+
+
+def update(request):
+    form = RegisterUpdateForm()
+
+    if request.method == "POST":
+        form = RegisterUpdateForm(data=request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Usuário atualizado com sucesso.")
+            redirect("contact:update")
+
+    return render(request, "contact/update.html", {"form": form})
 
 
 def logout(request):
