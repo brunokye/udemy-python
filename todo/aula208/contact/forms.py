@@ -56,7 +56,7 @@ class ContactForm(forms.ModelForm):
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField(required=True, min_length=3)
     last_name = forms.CharField(required=True, min_length=3)
-    last_name = forms.EmailField()
+    email = forms.EmailField()
 
     class Meta:
         model = User
