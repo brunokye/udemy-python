@@ -35,7 +35,7 @@ def login(request):
 
 
 def update(request):
-    form = RegisterUpdateForm()
+    form = RegisterUpdateForm(instance=request.user)
 
     if request.method == "POST":
         form = RegisterUpdateForm(data=request.POST, instance=request.user)
