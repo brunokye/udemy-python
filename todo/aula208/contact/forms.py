@@ -34,7 +34,7 @@ class ContactForm(forms.ModelForm):
 
         if first_name == last_name:
             msg = ValidationError(
-                "Primeiro nome não pode ser igual ao segundo",
+                "Primeiro nome não pode ser igual ao segundo.",
                 code="invalid",
             )
 
@@ -48,7 +48,7 @@ class ContactForm(forms.ModelForm):
 
         if first_name == "ABC":
             self.add_error(
-                "first_name", ValidationError("Nome inválido", code="invalid")
+                "first_name", ValidationError("Nome inválido.", code="invalid")
             )
 
         return first_name
@@ -74,7 +74,7 @@ class RegisterForm(UserCreationForm):
         email = self.cleaned_data.get("email")
 
         if User.objects.filter(email=email).exists():
-            self.add_error("email", ValidationError("Email já cadastrado"))
+            self.add_error("email", ValidationError("Email já cadastrado."))
 
         return email
 
@@ -111,9 +111,21 @@ class RegisterUpdateForm(forms.ModelForm):
         required=False,
     )
 
+    class Meta:
+        model = User
+        fields = (
+            "first_name",
+            "last_name",
+            "email",
+            "username",
+        )
+
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data["password1"])
+        password = self.cleaned_data["password1"]
+
+        if password:
+            user.set_password(password)
 
         if commit:
             user.save()
@@ -152,12 +164,3 @@ class RegisterUpdateForm(forms.ModelForm):
                 self.add_error("password1", ValidationError(error))
 
         return password
-
-    class Meta:
-        model = User
-        fields = (
-            "first_name",
-            "last_name",
-            "email",
-            "username",
-        )
