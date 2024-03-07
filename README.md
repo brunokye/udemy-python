@@ -244,5 +244,12 @@
      - Cabeçalho
      - Filtros para pesquisa
      - Organização do CRUD com urls
-     - Formulário para criação de contato
-     
+     - Formulário dinâmico para criação de contato
+     - Validação dos campos do formulário e redirecionamento
+     - Métodos update e delete
+     - Formulário para criação de usuário
+     - Validação dos campos do formulário e redirecionamento
+     - Métodos de login, update e logout
+     - Autentificação para diferenciar usuários
+     - Garantindo que o usuário está logado e questões de segurança
+     - Campo owner e ajuste no update/delete do contato
