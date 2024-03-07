@@ -1,5 +1,23 @@
+# Spacing
 print(f"\n{20 * '-'}\n")
 
-source venv/Scripts/Activate 
-source venv/Scripts/Activate ; cd todo/aula208/
+# Commands
+source venv/Scripts/Activate ; clear
+source venv/Scripts/Activate ; cd todo/aula208/ ; clear
 source venv/Scripts/Activate ; cd todo/aula208/ ; python manage.py runserver
+
+# Reset Django Password
+python manage.py shell
+
+from django.contrib.auth import get_user_model
+def reset_password(u, password):
+    try:
+        user = get_user_model().objects.get(username=u)
+    except:
+        return "User could not be found"
+    user.set_password(password)
+    user.save()
+    return "Password has been changed successfully"
+
+reset_password(username, password)
+example: reset_password('hello@djangowaves.com', 'averysecretpassword')
