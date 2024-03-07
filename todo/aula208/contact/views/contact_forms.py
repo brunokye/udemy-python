@@ -1,5 +1,6 @@
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from contact.forms import ContactForm
 from contact.models import Contact
@@ -17,7 +18,8 @@ def create(request):
             contact = form.save(commit=False)
             contact.owner = request.user
             contact.save()
-            return redirect("contact:update_contact", contact_id=contact.pk)
+            messages.success(request, "Contato criado com sucesso.")
+            return redirect("contact:detail", contact_id=contact.pk)
 
         return render(request, "contact/create.html", context)
 
@@ -38,7 +40,8 @@ def update_contact(request, contact_id):
 
         if form.is_valid():
             contact = form.save()
-            return redirect("contact:update_contact", contact_id=contact.pk)
+            messages.success(request, "Contato atualizado com sucesso.")
+            return redirect("contact:detail", contact_id=contact.pk)
 
         return render(request, "contact/create.html", context)
 
@@ -60,6 +63,7 @@ def delete(request, contact_id):
 
     if confirmation == "yes":
         contact.delete()
+        messages.success(request, "Contato deletado com sucesso.")
         return redirect("contact:index")
 
     return render(request, "contact/detail.html", context)
