@@ -20,7 +20,7 @@
         {% endif %}
         
         <div class="contact-links">
-            <a class="btn btn-link" href="{% url "contact:update" contact.id %}">Update</a>
+            <a class="btn btn-link" href="{% url "contact:update_contact" contact.id %}">Update</a>
             
             <form action="{% url "contact:delete" contact.id %}" method="POST">
                 {% csrf_token %}
