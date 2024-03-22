@@ -2,13 +2,17 @@
 
 Este repositório contém todas as atividades do curso de Python 3 desenvolvidas por [Bruno Ferreira](https://www.linkedin.com/in/brunokye/) enquanto estudava na [Udemy](www.udemy.com/course/python-3-do-zero-ao-avancado).
 
-##### Seção 1: Informações e avisos importantes
+##
+
+##### Seção 1: [Informações e avisos importantes](https://github.com/brunokye/udemy-python/tree/main/secao-01-informacoes-e-avisos-importantes)
 - [x] 0. Informações e avisos importantes
 
-##### Seção 2: Python + VS Code - Preparando meu ambiente de desenvolvimento
+##### Seção 2: [Python + VS Code - Preparando meu ambiente de desenvolvimento](https://github.com/brunokye/udemy-python/tree/main/secao-02-preparando-meu-ambiente-de-desenvolvimento)
 - [x] 0. Preparando meu ambiente de desenvolvimento
 
-##### Seção 3: Iniciando na programação com Python (Lógica de programação básica)
+##
+
+##### Seção 3: [Iniciando na programação com Python (Lógica de programação básica)](https://github.com/brunokye/udemy-python/tree/main/secao-03-iniciando-na-programacao-com-python)
 - [x] 1. Comentários
 - [x] 2. print
 - [x] 3. Tipagem
@@ -74,7 +78,7 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 63. Melhorias na verificação de CPF
 - [x] 64. Gerador de CPF
 
-##### Seção 4: Python Intermediário - Funções, Dicionários, Módulos, Programação Funcional e +
+##### Seção 4: [Python Intermediário - Funções, Dicionários, Módulos, Programação Funcional e +](https://github.com/brunokye/udemy-python/tree/main/secao-04-python-intermediario)
 - [x] 65. Funções, parâmetros e argumentos
 - [x] 66. Argumentos nomeados e posicionais
 - [x] 67. Valores padrões para parâmetros
@@ -131,7 +135,7 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 118. Problema dos parâmetros mutáveis em funções
 - [x] 119. Exercício, Guard Clause e dados salvos em json
 
-##### Seção 5: Introdução à Programação Orientada a Objetos em Python - POO (Classes)
+##### Seção 5: [Introdução à Programação Orientada a Objetos em Python - POO (Classes)](https://github.com/brunokye/udemy-python/tree/main/secao-05-introducao-a-programacao-orientada-a-objetos-em-python)
 - [x] 120. class
 - [x] 121. Métodos em instâncias de classes
 - [x] 122. Entendendo self em classes
@@ -175,7 +179,9 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 160. namedtuple
 - [x] 161. Criando sua própria lista com Iterable, Iterator e Sequence
 
-##### Seção 6: Módulos Python - os, datetime, sys, json, csv, selenium, pillow e +
+##
+
+##### Seção 6: [Módulos Python - os, datetime, sys, json, csv, selenium, pillow e +](https://github.com/brunokye/udemy-python/tree/main/secao-06-modulos-python)
 - [x] 162. datetime
 - [x] 163. timedelta e relativedelta
 - [x] 164. strftime
@@ -216,7 +222,7 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 199. openpyxl - Excel xlsx, xlsm, xltx e xltm
 - [x] 200. Pillow - redimensionando imagens
 
-##### Seção 7: PySide6 - Interface gráfica com QT 6 no Python, GUI para Desktop
+##### Seção 7: [PySide6 - Interface gráfica com QT 6 no Python, GUI para Desktop](https://github.com/brunokye/udemy-python/tree/main/secao-07-pyside6)
 - [x] 201. PySide6
     - [x] 1. Instalação
     - [x] 2. QApplication e QPushButton
@@ -246,14 +252,16 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 203. QtDesigner
 - [x] 204. QObject e QThread
 
-##### Seção 8: Base de dados com Python - SQLite e MySQL
+##### Seção 8: [Base de dados com Python - SQLite e MySQL](https://github.com/brunokye/udemy-python/tree/main/secao-08-base-de-dados-com-python)
 - [x] 205. SQLite - comandos, placeholders e CRUD
 - [x] 206. Docker - containers, MySQL, WSL2, PyMySQL, .env, comandos e CRUD
 
-##### Seção 9: Django no Python - Básico
+##
+
+##### Seção 9: [Django no Python - Básico](https://github.com/brunokye/udemy-python/tree/main/secao-09-django-no-python)
 - [x] 207. Django - comandos básicos, iniciando um projeto, termos e organizações
 
-##### Seção 10: Django no Python - Projeto Agenda
+##### Seção 10: [Django no Python - Projeto Agenda](https://github.com/brunokye/udemy-python/tree/main/secao-10-projeto-agenda)
 - [x] 208. Agenda
     - [x] 1. Arquivos e configurações iniciais
     - [x] 2. Área de admin
@@ -279,5 +287,5 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
     - [x] 22. Garantindo que o usuário está logado e questões de segurança
     - [x] 23. Campo owner e ajuste no update/delete do contato
 
-##### Seção 11: Django com Python - Primeiro Deploy (Linux)
+##### Seção 11: [Django com Python - Primeiro Deploy (Linux)]()
 # [...]
