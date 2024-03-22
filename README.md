@@ -1,6 +1,6 @@
 # Curso de Python 3 do Básico ao Avançado - Projetos Reais
 
-Este repositório contém todas as atividades do curso de Python 3 desenvolvidas por [Bruno Ferreira](https://www.linkedin.com/in/brunokye/) enquanto estudava na [Udemy](www.udemy.com/course/python-3-do-zero-ao-avancado).
+Este repositório contém todas as atividades do curso de Python 3 desenvolvidas por [Bruno Ferreira](https://www.linkedin.com/in/brunokye/) enquanto estudava na [Udemy](https://www.udemy.com/course/python-3-do-zero-ao-avancado/).
 
 >Python 3 completo: PySide6, Django, Selenium, Regexp, Testes, TDD, POO, Design Patterns GoF, algoritmos e programação.
 
