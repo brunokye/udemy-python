@@ -1,255 +1,283 @@
-1. Comentários
-2. print
-3. Tipagem
-4. type
-5. type
-6. type convertion
-7. Variáveis
-8. Variáveis
-9. Operadores aritméticos
-10. Operadores aritméticos
-11. Ordem de execucação
-12. Ordem de execucação
-13. f-strings
-14. format
-15. input
-16. if e else
-17. if, elif e else
-18. Debug
-19. Operadores de comparação
-20. Operadores de comparação
-21. Operadores lógicos
-22. Operadores lógicos
-23. Operadores lógicos
-24. Operadores lógicos
-25. Interpolação básica de strings
-26. f-strings
-27. Fatiamento de strings
-28. Fatiamento de strings
-29. try e except
-30. Variáveis, constantes e complexidade de código
-31. Flags: is, is not e None
-32. Exercícios
-33. Tipos e documentações do Python
-34. while
-35. while
-36. Operadores de atribuição
-37. while + continue
-38. while dentro de while
-39. Iterando strings com while
-40. Calculadora com while
-41. while e else
-42. Exercício
-43. for
-44. for e range
-45. Como o for funciona
-46. for, continue e break
-47. Exercício
-48. list
-49. for com list
-50. Exercício
-51. Empacotamento e desempacotamento
-52. tuple
-53. enumerate
-54. Exercício
-55. Imprecisão de ponto flutuante
-56. split, join e strip
-57. list dentro de list
-58. Comandos do Python
-59. Desempacotamento em chamadas de métodos e funções
-60. Operação ternária
-61. Primeiro dígito do CPF
-62. Segundo dígito do CPF
-63. Melhorias na verificação de CPF
-64. Gerador de CPF
-65. Funções, parâmetros e argumentos
-66. Argumentos nomeados e posicionais
-67. Valores padrões para parâmetros
-68. Escopo da função
-69. Debug
-70. return
-71. *args, desempacotamento e empacotamento
-72. Exercício
-73. Higher Order Functions
-74. Closure
-75. Exercício
-76. dict - Manipulando chaves/valores e Métodos úteis
-77. Exercício
-78. set - Métodos e Operadores úteis
-79. Exemplo de uso do set
-80. Exercício
-81. lambda
-82. lambda complexa
-83. args e kwargs
-84. list comprehension
-85. list comprehension com mais de um for
-86. dict comprehension e set comprehension
-87. isinstance()
-88. truthy e falsy - tipos mutáveis e imutáveis
-89. dir, hasattr e getattr
-90. generator expression
-91. generator function
-92. yield from
-93. try e except
-94. try, except e finally
-95. raise - lançando exceções
-96. Módulos - import, from, as, e *
-97. Modularização e sys.path
-98. Recarregando módulos - importlib e singleton
-99. Packages
-100. Exercícios - list comprehension e lambda
-101. Exercício - Closure
-102. Variáveis livres e nonlocal (local/global)
-103. Funções decoradoras
-104. Decoradores
-105. Decoradores com parâmetros
-106. Ordem de aplicação dos decoradores
-107. Exercícios
-108. count
-109. Combinations, Permutations e Product
-110. groupby
-111. map, partial, GeneratorType e esgotamento de iterators
-112. filter
-113. reduce
-114. Funções recursivas e Stack Overflow
-115. Ambientes virtuais - venv
-116. Context Manager with e métodos úteis do TextIOWrapper
-117. json
-118. Problema dos parâmetros mutáveis em funções
-119. Exercício, Guard Clause e dados salvos em json
-120. class
-121. Métodos em instâncias de classes
-122. Entendendo self em classes
-123. Escopo da classe e de métodos da classe
-124. Mantendo estados dentro da classe
-125. Atributos de classe
-126. dict e vars
-127. Exercício
-128. Métodos de classe + factories
-129. static methods
-130. method vs @classmethod vs @staticmethod
-131. property
-132. getter e setter
-133. Encapsulamento
-134. Relações entre classes - Associação
-135. Relações entre classes - Agregação
-136. Relações entre classes - Composição
-137. Exercício
-138. Herança simples
-139. super e a sobreposição de membros
-140. Herança múltipla
-141. Mixins, Abstração e Log
-142. Classes Abstratas
-143. abstractmethod - property e setter
-144. Polimorfismo
-145. Positional-Only Parameters (/) e Keyword-Only Arguments (*)
-146. Exception
-147. Special/Magic/Dunder Methods
-148. new e init
-149. Context Manager
-150. contextlib
-151. Funções decoradas e decoradores com classes
-152. Funções decoradas e decoradores com métodos
-153. call
-154. Classes decoradoras
-155. metaclass
-156. DocStrings
-157. Enum
-158. Exercício
-159. dataclasses
-160. namedtuple
-161. Criando sua própria lista com Iterable, Iterator e Sequence
-162. datetime
-163. timedelta e relativedelta
-164. strftime
-165. Exercício
-166. calendar
-167. locale
-168. Módulo os
-169. os.path
-170. os.listdir
-171. os.walk
-172. os.path.getsize
-173. os + shutil
-174. os + shutil
-175. JSON
-176. json.dumps e json.loads com strings + typing.TypedDict
-177. json.dumps e json.loads com arquivos
-178. CSV - Comma Separated Values
-179. csv.reader e csv.DictReader
-180. csv.writer e csv.DictWriter
-181. random
-182. secrets
-183. string.Template
-184. Variáveis de Ambiente e dotenv
-185. Configurando SMTP e senhas de apps no GMAIL - Enviando E-mails SMTP
-186. ZIP - compactando e descompactando arquivos
-187. sys.argv
-188. argparse
-189. Protócolo HTTP
-190. http.server - servindo arquivos HTML e CSS
-191. requests para requisições HTTP
-192. Web Scraping utilizando BeautifulSoup
-193. Selenium - chromedriver e automatização de tarefas no navegador
-194. subprocess - executando programas e comandos externos
-195. Jupyter Notebook - Instalação, teste e exemplos
-196. Threads - Executando processamentos em paralelo
-197. PyPDF2 - Manipulando arquivos PDF
-198. Deque - Trabalhando com LIFO e FIFO
-199. openpyxl - Excel xlsx, xlsm, xltx e xltm
-200. Pillow - redimensionando imagens
-201. PySide6
-     - Instalação
-     - QApplication e QPushButton
-     - QWidget e QLayout
-     - QMainWindow e centralWidget
-     - Signal e Slots
-     - Classes e herança
-202. Calculadora
-     - Janela principal com QMainWindow, QWidget e QVBoxLayout
-     - Ajustes e boas práticas
-     - PascalCase, camelCase ou snake_case
-     - QLineEdit e o display
-     - Criando um QLabel
-     - Configurando o PyQt Dark Theme
-     - Criando um botão com QPushButton
-     - Criando uma grid de botões com QGridLayout
-     - Preenchendo a grid de botões
-     - Criando um Slot com dados para o Signal "clicked"
-     - Permitindo apenas números válidos no display
-     - QLabel, TYPE_CHECKING, getter/setter e Circular Imports
-     - Configuração dos botões especiais
-     - Botões especiais de operadores, clear e equation
-     - Configuranado o botão igual e o número da direita
-     - Configurando a potenciação
-     - Configurando o "backspace" do display
-     - Diálogos com o usuário com QMessageBox
-203. QtDesigner
-204. QObject e QThread
-205. SQLite - comandos, placeholders e CRUD
-206. Docker - containers, MySQL, WSL2, PyMySQL, .env, comandos e CRUD
-207. Django - comandos básicos, iniciando um projeto, termos e organizações
-208. Agenda
-     - Arquivos e configurações iniciais
-     - Área de admin
-     - CRUD usando Django Shell
-     - Model Contact
-     - Model User
-     - Gerando dados aleatórios com Faker
-     - Package view e local_settings.py
-     - Aplicando CSS
-     - Injetando contatos na tela inicial
-     - Tabela dos contatos
-     - Página individual dos contatos
-     - Cabeçalho
-     - Filtros para pesquisa
-     - Organização do CRUD com urls
-     - Formulário dinâmico para criação de contato
-     - Validação dos campos do formulário e redirecionamento
-     - Métodos update e delete
-     - Formulário para criação de usuário
-     - Validação dos campos do formulário e redirecionamento
-     - Métodos de login, update e logout
-     - Autentificação para diferenciar usuários
-     - Garantindo que o usuário está logado e questões de segurança
-     - Campo owner e ajuste no update/delete do contato
+# Curso de Python 3 do Básico ao Avançado - Projetos Reais
+
+Este repositório contém todas as atividades do curso de Python 3 desenvolvidas por [Bruno Ferreira](https://www.linkedin.com/in/brunokye/) enquanto estudava na [Udemy](www.udemy.com/course/python-3-do-zero-ao-avancado).
+
+##### Seção 1: Informações e avisos importantes
+- [x] 0. Informações e avisos importantes
+
+##### Seção 2: Python + VS Code - Preparando meu ambiente de desenvolvimento
+- [x] 0. Preparando meu ambiente de desenvolvimento
+
+##### Seção 3: Iniciando na programação com Python (Lógica de programação básica)
+- [x] 1. Comentários
+- [x] 2. print
+- [x] 3. Tipagem
+- [x] 4. type
+- [x] 5. type
+- [x] 6. type convertion
+- [x] 7. Variáveis
+- [x] 8. Variáveis
+- [x] 9. Operadores aritméticos
+- [x] 10. Operadores aritméticos
+- [x] 11. Ordem de execucação
+- [x] 12. Ordem de execucação
+- [x] 13. f-strings
+- [x] 14. format
+- [x] 15. input
+- [x] 16. if e else
+- [x] 17. if, elif e else
+- [x] 18. Debug
+- [x] 19. Operadores de comparação
+- [x] 20. Operadores de comparação
+- [x] 21. Operadores lógicos
+- [x] 22. Operadores lógicos
+- [x] 23. Operadores lógicos
+- [x] 24. Operadores lógicos
+- [x] 25. Interpolação básica de strings
+- [x] 26. f-strings
+- [x] 27. Fatiamento de strings
+- [x] 28. Fatiamento de strings
+- [x] 29. try e except
+- [x] 30. Variáveis, constantes e complexidade de código
+- [x] 31. Flags: is, is not e None
+- [x] 32. Exercícios
+- [x] 33. Tipos e documentações do Python
+- [x] 34. while
+- [x] 35. while
+- [x] 36. Operadores de atribuição
+- [x] 37. while + continue
+- [x] 38. while dentro de while
+- [x] 39. Iterando strings com while
+- [x] 40. Calculadora com while
+- [x] 41. while e else
+- [x] 42. Exercício
+- [x] 43. for
+- [x] 44. for e range
+- [x] 45. Como o for funciona
+- [x] 46. for, continue e break
+- [x] 47. Exercício
+- [x] 48. list
+- [x] 49. for com list
+- [x] 50. Exercício
+- [x] 51. Empacotamento e desempacotamento
+- [x] 52. tuple
+- [x] 53. enumerate
+- [x] 54. Exercício
+- [x] 55. Imprecisão de ponto flutuante
+- [x] 56. split, join e strip
+- [x] 57. list dentro de list
+- [x] 58. Comandos do Python
+- [x] 59. Desempacotamento em chamadas de métodos e funções
+- [x] 60. Operação ternária
+- [x] 61. Primeiro dígito do CPF
+- [x] 62. Segundo dígito do CPF
+- [x] 63. Melhorias na verificação de CPF
+- [x] 64. Gerador de CPF
+
+##### Seção 4: Python Intermediário - Funções, Dicionários, Módulos, Programação Funcional e +
+- [x] 65. Funções, parâmetros e argumentos
+- [x] 66. Argumentos nomeados e posicionais
+- [x] 67. Valores padrões para parâmetros
+- [x] 68. Escopo da função
+- [x] 69. Debug
+- [x] 70. return
+- [x] 71. *args, desempacotamento e empacotamento
+- [x] 72. Exercício
+- [x] 73. Higher Order Functions
+- [x] 74. Closure
+- [x] 75. Exercício
+- [x] 76. dict - Manipulando chaves/valores e Métodos úteis
+- [x] 77. Exercício
+- [x] 78. set - Métodos e Operadores úteis
+- [x] 79. Exemplo de uso do set
+- [x] 80. Exercício
+- [x] 81. lambda
+- [x] 82. lambda complexa
+- [x] 83. args e kwargs
+- [x] 84. list comprehension
+- [x] 85. list comprehension com mais de um for
+- [x] 86. dict comprehension e set comprehension
+- [x] 87. isinstance()
+- [x] 88. truthy e falsy - tipos mutáveis e imutáveis
+- [x] 89. dir, hasattr e getattr
+- [x] 90. generator expression
+- [x] 91. generator function
+- [x] 92. yield from
+- [x] 93. try e except
+- [x] 94. try, except e finally
+- [x] 95. raise - lançando exceções
+- [x] 96. Módulos - import, from, as, e *
+- [x] 97. Modularização e sys.path
+- [x] 98. Recarregando módulos - importlib e singleton
+- [x] 99. Packages
+- [x] 100. Exercícios - list comprehension e lambda
+- [x] 101. Exercício - Closure
+- [x] 102. Variáveis livres e nonlocal (local/global)
+- [x] 103. Funções decoradoras
+- [x] 104. Decoradores
+- [x] 105. Decoradores com parâmetros
+- [x] 106. Ordem de aplicação dos decoradores
+- [x] 107. Exercícios
+- [x] 108. count
+- [x] 109. Combinations, Permutations e Product
+- [x] 110. groupby
+- [x] 111. map, partial, GeneratorType e esgotamento de iterators
+- [x] 112. filter
+- [x] 113. reduce
+- [x] 114. Funções recursivas e Stack Overflow
+- [x] 115. Ambientes virtuais - venv
+- [x] 116. Context Manager with e métodos úteis do TextIOWrapper
+- [x] 117. json
+- [x] 118. Problema dos parâmetros mutáveis em funções
+- [x] 119. Exercício, Guard Clause e dados salvos em json
+
+##### Seção 5: Introdução à Programação Orientada a Objetos em Python - POO (Classes)
+- [x] 120. class
+- [x] 121. Métodos em instâncias de classes
+- [x] 122. Entendendo self em classes
+- [x] 123. Escopo da classe e de métodos da classe
+- [x] 124. Mantendo estados dentro da classe
+- [x] 125. Atributos de classe
+- [x] 126. dict e vars
+- [x] 127. Exercício
+- [x] 128. Métodos de classe + factories
+- [x] 129. static methods
+- [x] 130. method vs @classmethod vs @staticmethod
+- [x] 131. property
+- [x] 132. getter e setter
+- [x] 133. Encapsulamento
+- [x] 134. Relações entre classes - Associação
+- [x] 135. Relações entre classes - Agregação
+- [x] 136. Relações entre classes - Composição
+- [x] 137. Exercício
+- [x] 138. Herança simples
+- [x] 139. super e a sobreposição de membros
+- [x] 140. Herança múltipla
+- [x] 141. Mixins, Abstração e Log'
+- [x] 142. Classes Abstratas
+- [x] 143. abstractmethod - property e setter
+- [x] 144. Polimorfismo
+- [x] 145. Positional-Only Parameters (/) e Keyword-Only Arguments (*)
+- [x] 146. Exception
+- [x] 147. Special/Magic/Dunder Methods
+- [x] 148. new e init
+- [x] 149. Context Manager
+- [x] 150. contextlib
+- [x] 151. Funções decoradas e decoradores com classes
+- [x] 152. Funções decoradas e decoradores com métodos
+- [x] 153. call
+- [x] 154. Classes decoradoras
+- [x] 155. metaclass
+- [x] 156. DocStrings
+- [x] 157. Enum
+- [x] 158. Exercício
+- [x] 159. dataclasses
+- [x] 160. namedtuple
+- [x] 161. Criando sua própria lista com Iterable, Iterator e Sequence
+
+##### Seção 6: Módulos Python - os, datetime, sys, json, csv, selenium, pillow e +
+- [x] 162. datetime
+- [x] 163. timedelta e relativedelta
+- [x] 164. strftime
+- [x] 165. Exercício
+- [x] 166. calendar
+- [x] 167. locale
+- [x] 168. Módulo os
+- [x] 169. os.path
+- [x] 170. os.listdir
+- [x] 171. os.walk
+- [x] 172. os.path.getsize
+- [x] 173. os + shutil
+- [x] 174. os + shutil
+- [x] 175. JSON
+- [x] 176. json.dumps e json.loads com strings + typing.TypedDict
+- [x] 177. json.dumps e json.loads com arquivos
+- [x] 178. CSV - Comma Separated Values
+- [x] 179. csv.reader e csv.DictReader
+- [x] 180. csv.writer e csv.DictWriter
+- [x] 181. random
+- [x] 182. secrets
+- [x] 183. string.Template
+- [x] 184. Variáveis de Ambiente e dotenv
+- [x] 185. Configurando SMTP e senhas de apps no GMAIL - Enviando E-mails SMTP
+- [x] 186. ZIP - compactando e descompactando arquivos
+- [x] 187. sys.argv
+- [x] 188. argparse
+- [x] 189. Protócolo HTTP
+- [x] 190. http.server - servindo arquivos HTML e CSS
+- [x] 191. requests para requisições HTTP
+- [x] 192. Web Scraping utilizando BeautifulSoup
+- [x] 193. Selenium - chromedriver e automatização de tarefas no navegador
+- [x] 194. subprocess - executando programas e comandos externos
+- [x] 195. Jupyter Notebook - Instalação, teste e exemplos
+- [x] 196. Threads - Executando processamentos em paralelo
+- [x] 197. PyPDF2 - Manipulando arquivos PDF
+- [x] 198. Deque - Trabalhando com LIFO e FIFO
+- [x] 199. openpyxl - Excel xlsx, xlsm, xltx e xltm
+- [x] 200. Pillow - redimensionando imagens
+
+##### Seção 7: PySide6 - Interface gráfica com QT 6 no Python, GUI para Desktop
+- [x] 201. PySide6
+    - [x] 1. Instalação
+    - [x] 2. QApplication e QPushButton
+    - [x] 3. QWidget e QLayout
+    - [x] 4. QMainWindow e centralWidget
+    - [x] 5. Signal e Slots
+    - [x] 6. Classes e herança
+- [x] 202. Calculadora
+    - [x] 1. Janela principal com QMainWindow, QWidget e QVBoxLayout
+    - [x] 2. Ajustes e boas práticas
+    - [x] 3. PascalCase, camelCase ou snake_case
+    - [x] 4. QLineEdit e o display
+    - [x] 5. Criando um QLabel
+    - [x] 6. Configurando o PyQt Dark Theme
+    - [x] 7. Criando um botão com QPushButton
+    - [x] 8. Criando uma grid de botões com QGridLayout
+    - [x] 9. Preenchendo a grid de botões
+    - [x] 10. Criando um Slot com dados para o Signal "clicked"
+    - [x] 11. Permitindo apenas números válidos no display
+    - [x] 12. QLabel, TYPE_CHECKING, getter/setter e Circular Imports
+    - [x] 13. Configuração dos botões especiais
+    - [x] 14. Botões especiais de operadores, clear e equation
+    - [x] 15. Configuranado o botão igual e o número da direita
+    - [x] 16. Configurando a potenciação
+    - [x] 17. Configurando o "backspace" do display
+    - [x] 18. Diálogos com o usuário com QMessageBox
+- [x] 203. QtDesigner
+- [x] 204. QObject e QThread
+
+##### Seção 8: Base de dados com Python - SQLite e MySQL
+- [x] 205. SQLite - comandos, placeholders e CRUD
+- [x] 206. Docker - containers, MySQL, WSL2, PyMySQL, .env, comandos e CRUD
+
+##### Seção 9: Django no Python - Básico
+- [x] 207. Django - comandos básicos, iniciando um projeto, termos e organizações
+
+##### Seção 10: Django no Python - Projeto Agenda
+- [x] 208. Agenda
+    - [x] 1. Arquivos e configurações iniciais
+    - [x] 2. Área de admin
+    - [x] 3. CRUD usando Django Shell
+    - [x] 4. Model Contact
+    - [x] 5. Model User
+    - [x] 6. Gerando dados aleatórios com Faker
+    - [x] 7. Package view e local_settings.py
+    - [x] 8. Aplicando CSS
+    - [x] 9. Injetando contatos na tela inicial
+    - [x] 10. Tabela dos contatos
+    - [x] 11. Página individual dos contatos
+    - [x] 12. Cabeçalho
+    - [x] 13. Filtros para pesquisa
+    - [x] 14. Organização do CRUD com urls
+    - [x] 15. Formulário dinâmico para criação de contato
+    - [x] 16. Validação dos campos do formulário e redirecionamento
+    - [x] 17. Métodos update e delete
+    - [x] 18. Formulário para criação de usuário
+    - [x] 19. Validação dos campos do formulário e redirecionamento
+    - [x] 20. Métodos de login, update e logout
+    - [x] 21. Autentificação para diferenciar usuários
+    - [x] 22. Garantindo que o usuário está logado e questões de segurança
+    - [x] 23. Campo owner e ajuste no update/delete do contato
+
+##### Seção 11: Django com Python - Primeiro Deploy (Linux)
+# [...]
