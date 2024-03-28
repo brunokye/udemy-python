@@ -289,5 +289,14 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
     - [x] 22. Garantindo que o usuário está logado e questões de segurança
     - [x] 23. Campo owner e ajuste no update/delete do contato
 
-##### Seção 11: [Django com Python - Primeiro Deploy (Linux)]()
-# [...]
+##### Seção 11: [Django com Python - Primeiro Deploy (Linux)](https://github.com/brunokye/udemy-python/tree/main/secao-11-primeiro-deploy-linux)
+- [x] 0. Criando um servidor Ubuntu na Google Cloud
+- [x] 0. Preparando o local_settings.py
+- [x] 0. Configurando PostgreSQL
+- [x] 0. Criando local_settings.py no servidor
+- [x] 0. Dando início ao Deploy
+- [x] 0. Configurações do servidor
+- [x] 0. Como subir modificações para o servidor
+
+##### Seção 12: [Django com Python - Projeto Blog]()
+...
