@@ -21,3 +21,6 @@ def reset_password(u, password):
 
 reset_password(username, password)
 example: reset_password('hello@djangowaves.com', 'averysecretpassword')
+
+# Secret Key
+python -c "import secrets; print(secrets.token_hex(32))"
