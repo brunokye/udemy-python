@@ -4,3 +4,4 @@ psycopg2-binary==2.9.9
 sqlparse==0.4.4
 tzdata==2024.1
 pillow==10.3.0
+django-summernote==0.8.20.0
