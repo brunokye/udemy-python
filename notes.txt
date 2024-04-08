@@ -1,11 +1,6 @@
 # Spacing
 print(f"\n{20 * '-'}\n")
 
-# Commands
-source venv/Scripts/Activate ; clear
-source venv/Scripts/Activate ; cd todo/aula208/ ; clear
-source venv/Scripts/Activate ; cd todo/aula208/ ; python manage.py runserver
-
 # Reset Django Password
 python manage.py shell
 
