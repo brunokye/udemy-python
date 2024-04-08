@@ -1,6 +1,9 @@
-from django.contrib import admin
 from blog.models import Tag, Category, Page, Post
+from django.contrib import admin
+from django.utils.safestring import mark_safe
 from django_summernote.admin import SummernoteModelAdmin  # type: ignore
+
+# from django.urls import reverse
 
 
 @admin.register(Tag)
@@ -93,6 +96,7 @@ class PostAdmin(SummernoteModelAdmin):
         "updated_at",
         "created_by",
         "updated_by",
+        "link",
     )
     prepopulated_fields = {
         "slug": ("title",),
@@ -109,3 +113,15 @@ class PostAdmin(SummernoteModelAdmin):
             obj.created_by = request.user
 
         obj.save()
+
+    def link(self, obj):
+        if not obj.id:
+            return "-"
+
+        # url_do_post = reverse("blog:post", args=(obj.slug,))
+        url_do_post = obj.get_absolute_url()
+        safe_link = mark_safe(
+            f'<a target="_blank" href="{url_do_post}">Ver o post no site</a>'
+        )
+
+        return safe_link

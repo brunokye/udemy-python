@@ -1,6 +1,7 @@
 from django.db import models
 from utils.rands import slugify_new
 from utils.images import resize_image
+from django.urls import reverse
 from django.contrib.auth.models import User
 from django_summernote.models import AbstractAttachment  # type: ignore
 
@@ -128,6 +129,11 @@ class Post(models.Model):
         default=None,
     )
     tag = models.ManyToManyField(Tag, blank=True, default="")
+
+    def get_absolute_url(self):
+        if not self.is_published:
+            return reverse("blog:index")
+        return reverse("blog:post", args=(self.slug,))
 
     def save(self, *args, **kwargs):
         if not self.slug:
