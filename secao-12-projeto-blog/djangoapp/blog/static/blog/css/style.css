@@ -86,10 +86,15 @@
     text-rendering: optimizeLegibility;
   }
   
+  .CodeMirror {
+    height: auto !important;
+    font-size: var(--fs-smlr) !important;
+  }
+
   img {
     margin: 0 auto;
   }
-  
+
   a {
     color: hsl(var(--clr-primary-base));
     text-decoration: none;
@@ -145,7 +150,7 @@
     max-width: 100%;
     overflow-x: auto;
     line-height: var(--lh-mono);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-smlr);
   }
   
   pre,
