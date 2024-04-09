@@ -76,7 +76,7 @@
                             <span>Tags: </span>
                             
                             {% for tag in post.tag.all %}
-                                <a class="post-tag-link" href="#">
+                                <a class="post-tag-link" href="{% url "blog:tag" tag.slug %}">
                                     <i class="fa-solid fa-link"></i>
                                     <span>{{ tag.name }}</span>
                                 </a>
