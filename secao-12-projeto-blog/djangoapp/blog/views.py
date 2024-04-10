@@ -11,10 +11,8 @@ PER_PAGE = 9
 
 
 class PostListView(ListView):
-    model = Post
     template_name = "blog/pages/index.html"
     context_object_name = "posts"
-    ordering = ("-pk",)
     paginate_by = PER_PAGE
     queryset = Post.objects.get_published()  # type: ignore
 
@@ -29,17 +27,17 @@ class PostListView(ListView):
         return context
 
 
-def index(request):
-    posts = Post.objects.get_published()  # type: ignore
-    paginator = Paginator(posts, PER_PAGE)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
+# def index(request):
+#     posts = Post.objects.get_published()  # type: ignore
+#     paginator = Paginator(posts, PER_PAGE)
+#     page_number = request.GET.get("page")
+#     page_obj = paginator.get_page(page_number)
 
-    return render(
-        request,
-        "blog/pages/index.html",
-        {"page_obj": page_obj, "page_title": "Home"},
-    )
+#     return render(
+#         request,
+#         "blog/pages/index.html",
+#         {"page_obj": page_obj, "page_title": "Home"},
+#     )
 
 
 def created_by(request, author_id):
