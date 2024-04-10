@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+from django.views.generic import ListView
 from django.shortcuts import render
 from django.db.models import Q
 from django.http import Http404
@@ -7,6 +8,25 @@ from blog.models import Post, Page
 
 
 PER_PAGE = 9
+
+
+class PostListView(ListView):
+    model = Post
+    template_name = "blog/pages/index.html"
+    context_object_name = "posts"
+    ordering = ("-pk",)
+    paginate_by = PER_PAGE
+    queryset = Post.objects.get_published()  # type: ignore
+
+    # def get_queryset(self):
+    #     queryset = super().get_queryset()
+    #     queryset = queryset.filter(is_published=True)
+    #     return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({"page_title": "Home"})
+        return context
 
 
 def index(request):
