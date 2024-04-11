@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.db.models import Q
 from django.http import Http404, HttpRequest
 from blog.models import Post, Page
@@ -264,21 +264,37 @@ class PageDetailView(DetailView):
 #     )
 
 
-def post(request, slug):
-    post = (
-        Post.objects.get_published().filter(slug=slug).first()  # type: ignore
-    )
+class PostDetailView(DetailView):
+    model = Post
+    template_name = "blog/pages/post.html"
+    slug_field = "slug"
+    context_object_name = "post"
 
-    if post is None:
-        raise Http404()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+        context.update({"page_title": post.title})  # type: ignore
+        return context
 
-    page_title = post.title
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=True)
 
-    return render(
-        request,
-        "blog/pages/post.html",
-        {
-            "post": post,
-            "page_title": page_title,
-        },
-    )
+
+# def post(request, slug):
+#     post = (
+#         Post.objects.get_published().filter(slug=slug).first()
+#     )
+
+#     if post is None:
+#         raise Http404()
+
+#     page_title = post.title
+
+#     return render(
+#         request,
+#         "blog/pages/post.html",
+#         {
+#             "post": post,
+#             "page_title": page_title,
+#         },
+#     )
