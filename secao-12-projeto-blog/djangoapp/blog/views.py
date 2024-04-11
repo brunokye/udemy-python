@@ -1,7 +1,5 @@
-from typing import Any
 from django.contrib.auth.models import User
-from django.db.models.query import QuerySet
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.http import Http404, HttpRequest
@@ -61,7 +59,7 @@ class CreatedByListView(PostListView):
 
         return context
 
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self):
         qs = super().get_queryset()
         author_id = self.kwargs.get("author_id")
         qs = qs.filter(created_by__pk=author_id)
@@ -100,7 +98,7 @@ class CreatedByListView(PostListView):
 class CategoryListView(PostListView):
     allow_empty = False
 
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self):
         return (
             super()
             .get_queryset()
@@ -143,7 +141,7 @@ class CategoryListView(PostListView):
 class TagListView(PostListView):
     allow_empty = False
 
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self):
         return super().get_queryset().filter(tag__slug=self.kwargs.get("slug"))
 
     def get_context_data(self, **kwargs):
@@ -187,7 +185,7 @@ class SearchListView(PostListView):
         self.search_value = request.GET.get("search", "").strip()
         return super().setup(request, *args, **kwargs)
 
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self):
         return (
             super()
             .get_queryset()
@@ -212,44 +210,58 @@ class SearchListView(PostListView):
         return super().get(request, *args, **kwargs)
 
 
-def search(request):
-    search_value = request.GET.get("search", "").strip()
+# def search(request):
+#     search_value = request.GET.get("search", "").strip()
 
-    posts = Post.objects.get_published().filter(  # type: ignore
-        Q(title__icontains=search_value)
-        | Q(excerpt__icontains=search_value)
-        | Q(content__icontains=search_value)
-    )[:PER_PAGE]
+#     posts = Post.objects.get_published().filter(  # type: ignore
+#         Q(title__icontains=search_value)
+#         | Q(excerpt__icontains=search_value)
+#         | Q(content__icontains=search_value)
+#     )[:PER_PAGE]
 
-    page_title = f"Search {search_value[:10]}"
+#     page_title = f"Search {search_value[:10]}"
 
-    return render(
-        request,
-        "blog/pages/index.html",
-        {
-            "page_obj": posts,
-            "search_value": search_value,
-            "page_title": page_title,
-        },
-    )
+#     return render(
+#         request,
+#         "blog/pages/index.html",
+#         {
+#             "page_obj": posts,
+#             "search_value": search_value,
+#             "page_title": page_title,
+#         },
+#     )
 
 
-def page(request, slug):
-    page = Page.objects.filter(is_published=True).filter(slug=slug).first()
+class PageDetailView(DetailView):
+    model = Page
+    template_name = "blog/pages/page.html"
+    slug_field = "slug"
+    context_object_name = "page"
 
-    if page is None:
-        raise Http404()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        page = self.get_object()
+        context.update({"page_title": page.title})  # type: ignore
+        return context
 
-    page_title = page.title
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=True)
 
-    return render(
-        request,
-        "blog/pages/page.html",
-        {
-            "page": page,
-            "page_title": page_title,
-        },
-    )
+
+# def page(request, slug):
+#     page = Page.objects.filter(is_published=True).filter(slug=slug).first()
+
+#     if page is None:
+#         raise Http404()
+
+#     return render(
+#         request,
+#         "blog/pages/page.html",
+#         {
+#             "page": page,
+#             "page_title": page.title,
+#         },
+#     )
 
 
 def post(request, slug):
