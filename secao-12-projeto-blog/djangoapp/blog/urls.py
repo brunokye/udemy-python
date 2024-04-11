@@ -2,11 +2,11 @@ from django.urls import path
 from blog.views import (
     post,
     page,
-    search,
     PostListView,
     CreatedByListView,
     CategoryListView,
     TagListView,
+    SearchListView,
 )
 
 app_name = "blog"
@@ -22,5 +22,5 @@ urlpatterns = [
     ),
     path("category/<slug:slug>/", CategoryListView.as_view(), name="category"),
     path("tag/<slug:slug>/", TagListView.as_view(), name="tag"),
-    path("search/", search, name="search"),
+    path("search/", SearchListView.as_view(), name="search"),
 ]
