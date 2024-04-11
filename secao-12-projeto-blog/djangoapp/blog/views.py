@@ -45,7 +45,7 @@ class PostListView(ListView):
 
 class CreatedByListView(PostListView):
     def get_context_data(self, **kwargs):
-        ctx = super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         author_id = self.kwargs.get("author_id")
         user = User.objects.filter(pk=author_id).first()
 
@@ -57,10 +57,10 @@ class CreatedByListView(PostListView):
             user_full_name = f"{user.first_name} {user.last_name}"
 
         page_title = f"Posts de {user_full_name}"
-        ctx.update({"page_title": page_title})
-        ctx["user"] = user  # Add user to context
+        context.update({"page_title": page_title})
+        context["user"] = user
 
-        return ctx
+        return context
 
     def get_queryset(self) -> QuerySet[Any]:
         qs = super().get_queryset()
@@ -96,6 +96,25 @@ class CreatedByListView(PostListView):
 #             "page_title": page_title,
 #         },
 #     )
+
+
+class CategoryListView(PostListView):
+    allow_empty = False
+
+    def get_queryset(self) -> QuerySet[Any]:
+        return (
+            super()
+            .get_queryset()
+            .filter(category__slug=self.kwargs.get("slug"))
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        page_title = (
+            f"Categoria {self.object_list[0].category.name}"  # type: ignore
+        )
+        context.update({"page_title": page_title})
+        return context
 
 
 def category(request, slug):
