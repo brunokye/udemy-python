@@ -298,5 +298,22 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 0. Configurações do servidor
 - [x] 0. Como subir modificações para o servidor
 
-##### Seção 12: [Django com Python - Projeto Blog]()
+##### Seção 12: [Django com Python - Projeto Blog](https://github.com/brunokye/udemy-python/tree/main/secao-12-projeto-blog)
+- [x] 0. Configurando o projeto, setup do VSCode e git
+- [x] 0. Iniciando o projeto Django e configurando Docker
+- [x] 0. Criando e configurando o app blog
+- [x] 0. Criando templates para pages e partials
+- [x] 0. Criando e configurando o app site_setup
+- [x] 0. Iniciando o CSS
+- [x] 0. Criando os templates necessários para o layout
+- [x] 0. Criando as models Tag, Category, Page e Post
+- [x] 0. Adicionando django-summernote como editor HTML em campos TextField
+- [x] 0. Criando um manager personalizado com models.Manager do Django
+- [x] 0. Preenchendo as páginas com informações inseridas na área de admin
+- [x] 0. Renderizando HTML com safe e adicionando CodeMirror para exibir código no template
+- [x] 0. Adicionando o funcionamento da barra search
+- [x] 0. Convertendo as views para Class Based
+- [x] 0. Configurando o dotenv e o django-axes para deploy
+
+##### Seção 13: [Django com Python - Projeto E-commerce]()
 ...
