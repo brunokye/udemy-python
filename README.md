@@ -264,55 +264,57 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 207. Django - comandos básicos, iniciando um projeto, termos e organizações
 
 ##### Seção 10: [Django no Python - Projeto Agenda](https://github.com/brunokye/udemy-python/tree/main/secao-10-projeto-agenda)
-- [x] 0. Arquivos e configurações iniciais
-- [x] 0. Área de admin
-- [x] 0. CRUD usando Django Shell
-- [x] 0. Model Contact
-- [x] 0. Model User
-- [x] 0. Gerando dados aleatórios com Faker
-- [x] 0. Package view e local_settings.py
-- [x] 0. Aplicando CSS
-- [x] 0. Injetando contatos na tela inicial
-- [x] 0. Tabela dos contatos
-- [x] 0. Página individual dos contatos
-- [x] 0. Cabeçalho
-- [x] 0. Filtros para pesquisa
-- [x] 0. Organização do CRUD com urls
-- [x] 0. Formulário dinâmico para criação de contato
-- [x] 0. Validação dos campos do formulário e redirecionamento
-- [x] 0. Métodos update e delete
-- [x] 0. Formulário para criação de usuário
-- [x] 0. Validação dos campos do formulário e redirecionamento
-- [x] 0. Métodos de login, update e logout
-- [x] 0. Autentificação para diferenciar usuários
-- [x] 0. Garantindo que o usuário está logado e questões de segurança
-- [x] 0. Campo owner e ajuste no update/delete do contato
+- [x] Arquivos e configurações iniciais
+- [x] Área de admin
+- [x] CRUD usando Django Shell
+- [x] Model Contact
+- [x] Model User
+- [x] Gerando dados aleatórios com Faker
+- [x] Package view e local_settings.py
+- [x] Aplicando CSS
+- [x] Injetando contatos na tela inicial
+- [x] Tabela dos contatos
+- [x] Página individual dos contatos
+- [x] Cabeçalho
+- [x] Filtros para pesquisa
+- [x] Organização do CRUD com urls
+- [x] Formulário dinâmico para criação de contato
+- [x] Validação dos campos do formulário e redirecionamento
+- [x] Métodos update e delete
+- [x] Formulário para criação de usuário
+- [x] Validação dos campos do formulário e redirecionamento
+- [x] Métodos de login, update e logout
+- [x] Autentificação para diferenciar usuários
+- [x] Garantindo que o usuário está logado e questões de segurança
+- [x] Campo owner e ajuste no update/delete do contato
+
+##
 
 ##### Seção 11: [Django com Python - Primeiro Deploy (Linux)](https://github.com/brunokye/udemy-python/tree/main/secao-11-primeiro-deploy-linux)
-- [x] 0. Criando um servidor Ubuntu na Google Cloud
-- [x] 0. Preparando o local_settings.py
-- [x] 0. Configurando PostgreSQL
-- [x] 0. Criando local_settings.py no servidor
-- [x] 0. Dando início ao Deploy
-- [x] 0. Configurações do servidor
-- [x] 0. Como subir modificações para o servidor
+- [x] Criando um servidor Ubuntu na Google Cloud
+- [x] Preparando o local_settings.py
+- [x] Configurando PostgreSQL
+- [x] Criando local_settings.py no servidor
+- [x] Dando início ao Deploy
+- [x] Configurações do servidor
+- [x] Como subir modificações para o servidor
 
 ##### Seção 12: [Django com Python - Projeto Blog](https://github.com/brunokye/udemy-python/tree/main/secao-12-projeto-blog)
-- [x] 0. Configurando o projeto, setup do VSCode e git
-- [x] 0. Iniciando o projeto Django e configurando Docker
-- [x] 0. Criando e configurando o app blog
-- [x] 0. Criando templates para pages e partials
-- [x] 0. Criando e configurando o app site_setup
-- [x] 0. Iniciando o CSS
-- [x] 0. Criando os templates necessários para o layout
-- [x] 0. Criando as models Tag, Category, Page e Post
-- [x] 0. Adicionando django-summernote como editor HTML em campos TextField
-- [x] 0. Criando um manager personalizado com models.Manager do Django
-- [x] 0. Preenchendo as páginas com informações inseridas na área de admin
-- [x] 0. Renderizando HTML com safe e adicionando CodeMirror para exibir código no template
-- [x] 0. Adicionando o funcionamento da barra search
-- [x] 0. Convertendo as views para Class Based
-- [x] 0. Configurando o dotenv e o django-axes para deploy
+- [x] Configurando o projeto, setup do VSCode e git
+- [x] Iniciando o projeto Django e configurando Docker
+- [x] Criando e configurando o app blog
+- [x] Criando templates para pages e partials
+- [x] Criando e configurando o app site_setup
+- [x] Iniciando o CSS
+- [x] Criando os templates necessários para o layout
+- [x] Criando as models Tag, Category, Page e Post
+- [x] Adicionando django-summernote como editor HTML em campos TextField
+- [x] Criando um manager personalizado com models.Manager do Django
+- [x] Preenchendo as páginas com informações inseridas na área de admin
+- [x] Renderizando HTML com safe e adicionando CodeMirror para exibir código no template
+- [x] Adicionando o funcionamento da barra search
+- [x] Convertendo as views para Class Based
+- [x] Configurando o dotenv e o django-axes para deploy
 
 ##### Seção 13: [Django com Python - Projeto E-commerce]()
 ...
