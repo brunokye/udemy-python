@@ -264,30 +264,29 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 207. Django - comandos básicos, iniciando um projeto, termos e organizações
 
 ##### Seção 10: [Django no Python - Projeto Agenda](https://github.com/brunokye/udemy-python/tree/main/secao-10-projeto-agenda)
-- [x] 208. Agenda
-    - [x] 1. Arquivos e configurações iniciais
-    - [x] 2. Área de admin
-    - [x] 3. CRUD usando Django Shell
-    - [x] 4. Model Contact
-    - [x] 5. Model User
-    - [x] 6. Gerando dados aleatórios com Faker
-    - [x] 7. Package view e local_settings.py
-    - [x] 8. Aplicando CSS
-    - [x] 9. Injetando contatos na tela inicial
-    - [x] 10. Tabela dos contatos
-    - [x] 11. Página individual dos contatos
-    - [x] 12. Cabeçalho
-    - [x] 13. Filtros para pesquisa
-    - [x] 14. Organização do CRUD com urls
-    - [x] 15. Formulário dinâmico para criação de contato
-    - [x] 16. Validação dos campos do formulário e redirecionamento
-    - [x] 17. Métodos update e delete
-    - [x] 18. Formulário para criação de usuário
-    - [x] 19. Validação dos campos do formulário e redirecionamento
-    - [x] 20. Métodos de login, update e logout
-    - [x] 21. Autentificação para diferenciar usuários
-    - [x] 22. Garantindo que o usuário está logado e questões de segurança
-    - [x] 23. Campo owner e ajuste no update/delete do contato
+- [x] 0. Arquivos e configurações iniciais
+- [x] 0. Área de admin
+- [x] 0. CRUD usando Django Shell
+- [x] 0. Model Contact
+- [x] 0. Model User
+- [x] 0. Gerando dados aleatórios com Faker
+- [x] 0. Package view e local_settings.py
+- [x] 0. Aplicando CSS
+- [x] 0. Injetando contatos na tela inicial
+- [x] 0. Tabela dos contatos
+- [x] 0. Página individual dos contatos
+- [x] 0. Cabeçalho
+- [x] 0. Filtros para pesquisa
+- [x] 0. Organização do CRUD com urls
+- [x] 0. Formulário dinâmico para criação de contato
+- [x] 0. Validação dos campos do formulário e redirecionamento
+- [x] 0. Métodos update e delete
+- [x] 0. Formulário para criação de usuário
+- [x] 0. Validação dos campos do formulário e redirecionamento
+- [x] 0. Métodos de login, update e logout
+- [x] 0. Autentificação para diferenciar usuários
+- [x] 0. Garantindo que o usuário está logado e questões de segurança
+- [x] 0. Campo owner e ajuste no update/delete do contato
 
 ##### Seção 11: [Django com Python - Primeiro Deploy (Linux)](https://github.com/brunokye/udemy-python/tree/main/secao-11-primeiro-deploy-linux)
 - [x] 0. Criando um servidor Ubuntu na Google Cloud
