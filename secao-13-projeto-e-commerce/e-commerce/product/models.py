@@ -1,6 +1,7 @@
 import os
 from django.db import models
 from django.conf import settings
+from django.utils.text import slugify
 from PIL import Image
 
 
@@ -11,9 +12,11 @@ class Product(models.Model):
     image = models.ImageField(
         upload_to="product_images/%Y/%m", null=True, blank=True
     )
-    slug = models.SlugField(unique=True)
-    price_marketing = models.FloatField()
-    price_marketing_promotional = models.FloatField(default=0)
+    slug = models.SlugField(unique=True, null=True, blank=True)
+    price_marketing = models.FloatField(verbose_name="Preço de Venda")
+    price_marketing_promotional = models.FloatField(
+        default=0, verbose_name="Preço Promocional"
+    )
     product_type = models.CharField(
         default="V",
         max_length=1,
@@ -22,6 +25,15 @@ class Product(models.Model):
             ("S", "Simples"),
         ),
     )
+
+    def get_formated_price(self):
+        return f"R$ {self.price_marketing:.2f}".replace(".", ",")
+
+    def get_formated_promotional_price(self):
+        return f"R$ {self.price_marketing_promotional:.2f}".replace(".", ",")
+
+    get_formated_price.short_description = "Preço"
+    get_formated_promotional_price.short_description = "Preço Promocional"
 
     def resize_image(self, image, new_width=800):
         image_full_path = os.path.join(settings.MEDIA_ROOT, image.name)
@@ -37,6 +49,9 @@ class Product(models.Model):
         new_image.save(image_full_path, optimize=True, quality=60)
 
     def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+
         super().save(*args, **kwargs)
 
         if self.image:
