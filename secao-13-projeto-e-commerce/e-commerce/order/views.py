@@ -1,3 +1,14 @@
-from django.shortcuts import render
+# from django.shortcuts import render
+from django.views import View
 
-# Create your views here.
+
+class Pay(View):
+    pass
+
+
+class Checkout(View):
+    pass
+
+
+class Detail(View):
+    pass
