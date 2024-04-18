@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load filters %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="row no-gutters">
+                        <div class="col-lg-12">
+                            {% if product.image %}
+                                <img class="img-fluid" src="{{ product.image.url }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="mt-4 mt-lg-0">
+                        <h1 class="h2">{{ product.name }}</h1>
+                        <p class="lead">{{ product.description_short }}</p>
+                        <p class="lead">
+                            {% if product.price_marketing_promotional %}
+                                <span id="variation-preco-promocional" class="lead product-price">{{ product.price_marketing_promotional | price_format }}</span>
+                                <span id="variation-preco" class="lead product-old-price text-muted">{{ product.price_marketing | price_format }}</span>
+                            {% else %}
+                                <span id="variation-preco" class="lead product-price">{{ product.price_marketing | price_format }}</span>
+                            {% endif %}
+                        </p>
+
+                        <form action="{% url "product:additem" %}" id="form-add-to-cart">
+                            <div class="form-group">
+                                <select id="select-variacoes" name="vid" class="form-control form-control-lg">
+                                    {% for variation in product.variation_set.all %}
+                                        {% if variation.price_promotional %}
+                                            <option 
+                                                data-preco="{{ variation.price | price_format }}" 
+                                                data-preco-promocional="{{ variation.price_promotional | price_format }}" 
+                                                value="{{ variation.id }}">
+                                                    {% if variation.name %}
+                                                        {{ variation.name }}
+                                                    {% else %}
+                                                        {{ variation }}
+                                                    {% endif %}
+                                            </option>
+                                        {% else %}
+                                            <option 
+                                                data-preco="{{ variation.price | price_format }}" 
+                                                value="{{ variation.id }}">
+                                                    {% if variation.name %}
+                                                        {{ variation.name }}
+                                                    {% else %}
+                                                        {{ variation }}
+                                                    {% endif %}
+                                            </option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="text-left">
+                                <button variation="submit" class="btn btn-primary btn-lg btn-block">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    Adicionar ao carrinho
+                                </button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mt-5 mb-5">
+                        <h2 class="text-center">{{ product.name }}</h2>
+                        {{ product.description_long | linebreaks }}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock content %}
