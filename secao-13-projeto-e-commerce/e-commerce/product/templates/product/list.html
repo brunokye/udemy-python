@@ -20,14 +20,14 @@
                             <div class="container product-price-block text-center">
                                 {% if product.price_marketing_promotional %}
                                     <span class="product-price">
-                                        {{ product.price_marketing | price_format }}
+                                        {{ product.price_marketing_promotional | price_format }}
                                     </span>
                                     <span class="product-old-price text-muted">
-                                        {{ product.price_marketing_promotional | price_format }}
+                                        {{ product.price_marketing | price_format }}
                                     </span>
                                 {% else %}
                                     <span class="product-price">
-                                        R$ {{ product.price_marketing | price_format }}
+                                        {{ product.price_marketing | price_format }}
                                     </span>
                                 {% endif %}
                             </div>
