@@ -1,8 +1,11 @@
-# from django.shortcuts import render
+from django.shortcuts import redirect, get_object_or_404
+from django.urls import reverse
+from django.http import HttpResponse
+from django.contrib import messages
 from django.views import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from .models import Product
+from .models import Product, Variation
 
 
 class ProductList(ListView):
@@ -20,7 +23,30 @@ class ProductDetail(DetailView):
 
 
 class ProductAddItem(View):
-    pass
+    def get(self, *args, **kwargs):
+        http_referer = self.request.META.get(
+            "HTTP_REFERER", reverse("product:list")
+        )
+        variation_id = self.request.GET.get("vid")
+
+        if not variation_id:
+            messages.error(self.request, "O produto não existe.")
+            return redirect(http_referer)
+
+        variation = get_object_or_404(Variation, id=variation_id)
+
+        if not self.request.session.get("cart"):
+            self.request.session["cart"] = {}
+            self.request.session.save()
+
+        cart = self.request.session["cart"]
+
+        if variation_id in cart:
+            pass
+        else:
+            pass
+
+        return HttpResponse(f"{variation.product} {variation.name}")
 
 
 class ProductRemoveItem(View):
