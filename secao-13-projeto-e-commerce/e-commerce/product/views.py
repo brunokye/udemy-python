@@ -1,6 +1,5 @@
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-from django.http import HttpResponse
 from django.contrib import messages
 from django.views import View
 from django.views.generic.list import ListView
@@ -24,6 +23,10 @@ class ProductDetail(DetailView):
 
 class ProductAddItem(View):
     def get(self, *args, **kwargs):
+        # if self.request.session.get("cart"):
+        #     del self.request.session["cart"]
+        #     self.request.session.save()
+
         http_referer = self.request.META.get(
             "HTTP_REFERER", reverse("product:list")
         )
@@ -34,6 +37,21 @@ class ProductAddItem(View):
             return redirect(http_referer)
 
         variation = get_object_or_404(Variation, id=variation_id)
+        variation_stock = variation.stock
+        product = variation.product
+
+        product_id = product.pk
+        product_name = product.name
+        variation_name = variation.name or ""
+        unitary_price = variation.price
+        unitary_promotional_price = variation.price_promotional
+        quantity = 1
+        slug = product.slug
+        image = product.image.url
+
+        if variation.stock < 1:
+            messages.error(self.request, "Estoque insuficiente.")
+            return redirect(http_referer)
 
         if not self.request.session.get("cart"):
             self.request.session["cart"] = {}
@@ -42,11 +60,49 @@ class ProductAddItem(View):
         cart = self.request.session["cart"]
 
         if variation_id in cart:
-            pass
-        else:
-            pass
+            cart_quantity = cart[variation_id]["quantity"]
+            cart_quantity += 1
 
-        return HttpResponse(f"{variation.product} {variation.name}")
+            if variation_stock < cart_quantity:
+                messages.error(
+                    self.request,
+                    f"Estoque insuficiente para {cart_quantity}x "
+                    f"no produto {product_name}. Adicionamos "
+                    f"{variation_stock}x no seu carrinho.",
+                )
+                cart_quantity = variation_stock
+
+            cart[variation_id]["quantity"] = cart_quantity
+            cart[variation_id]["quantitative_price"] = (
+                unitary_price * cart_quantity
+            )
+            cart[variation_id]["quantitative_promotional_price"] = (
+                unitary_promotional_price * cart_quantity
+            )
+        else:
+            cart[variation_id] = {
+                "product_id": product_id,
+                "product_name": product_name,
+                "variation_name": variation_name,
+                "variation_id": variation_id,
+                "unitary_price": unitary_price,
+                "unitary_promotional_price": unitary_promotional_price,
+                "quantitative_price": unitary_price,
+                "quantitative_promotional_price": unitary_promotional_price,
+                "quantity": quantity,
+                "slug": slug,
+                "image": image,
+            }
+
+        self.request.session.save()
+
+        messages.success(
+            self.request,
+            f"Produto {product_name} {variation_name} adicionado ao "
+            f"carrinho {cart[variation_id]['quantity']}x.",
+        )
+
+        return redirect(http_referer)
 
 
 class ProductRemoveItem(View):
@@ -54,7 +110,8 @@ class ProductRemoveItem(View):
 
 
 class ProductCart(View):
-    pass
+    def get(self, *args, **kwargs):
+        return render(self.request, "product/cart.html")
 
 
 class ProductCheckout(View):
