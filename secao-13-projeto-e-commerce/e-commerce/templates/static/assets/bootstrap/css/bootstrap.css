@@ -50,7 +50,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff; }
+  background-color: #fff; 
+  min-height: 100vh; }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -437,9 +438,9 @@ pre {
   overflow-y: scroll; }
 
 .container {
+  flex: 1;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 8px 15px;
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 576px) {
@@ -827,7 +828,8 @@ pre {
   .col-lg {
     flex-basis: 0;
     flex-grow: 1;
-    max-width: 100%; }
+    max-width: 100%; 
+    margin-bottom: 50px }
   .col-lg-auto {
     flex: 0 0 auto;
     width: auto;

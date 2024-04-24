@@ -70,6 +70,7 @@ class ProductAddItem(View):
                     f"no produto {product_name}. Adicionamos "
                     f"{variation_stock}x no seu carrinho.",
                 )
+
                 cart_quantity = variation_stock
 
             cart[variation_id]["quantity"] = cart_quantity
@@ -106,12 +107,39 @@ class ProductAddItem(View):
 
 
 class ProductRemoveItem(View):
-    pass
+    def get(self, *args, **kwargs):
+        http_referer = self.request.META.get(
+            "HTTP_REFERER", reverse("product:list")
+        )
+        variation_id = self.request.GET.get("vid")
+
+        if not variation_id:
+            return redirect(http_referer)
+
+        if not self.request.session.get("cart"):
+            return redirect(http_referer)
+
+        if variation_id not in self.request.session["cart"]:
+            return redirect(http_referer)
+
+        cart = self.request.session["cart"][variation_id]
+        messages.success(
+            self.request,
+            f"Produto { cart['product_name'] } removido do carrinho.",
+        )
+
+        del self.request.session["cart"][variation_id]
+        self.request.session.save()
+
+        return redirect(http_referer)
 
 
 class ProductCart(View):
     def get(self, *args, **kwargs):
-        return render(self.request, "product/cart.html")
+        context = {
+            "cart": self.request.session.get("cart"),
+        }
+        return render(self.request, "product/cart.html", context)
 
 
 class ProductCheckout(View):
