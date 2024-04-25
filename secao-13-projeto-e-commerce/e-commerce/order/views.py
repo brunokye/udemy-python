@@ -6,7 +6,7 @@ class Pay(View):
     pass
 
 
-class Checkout(View):
+class SaveOrder(View):
     pass
 
 
