@@ -1,7 +1,10 @@
-# from django.shortcuts import render
+import copy
+
 from . import forms
+from .models import UserProfile
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
 
 
 class BaseProfile(View):
@@ -10,7 +13,14 @@ class BaseProfile(View):
     def setup(self, *args, **kwargs):
         super().setup(*args, **kwargs)
 
+        self.cart = copy.deepcopy(self.request.session.get("cart", {}))
+        self.profile = None
+
         if self.request.user.is_authenticated:
+            self.profile = UserProfile.objects.filter(
+                user=self.request.user
+            ).first()
+
             self.context = {
                 "userform": forms.UserForm(
                     data=self.request.POST or None,
@@ -21,9 +31,6 @@ class BaseProfile(View):
                     data=self.request.POST or None
                 ),
             }
-            self.render = render(
-                self.request, self.template_name, self.context
-            )
         else:
             self.context = {
                 "userform": forms.UserForm(data=self.request.POST or None),
@@ -31,9 +38,11 @@ class BaseProfile(View):
                     data=self.request.POST or None
                 ),
             }
-            self.render = render(
-                self.request, self.template_name, self.context
-            )
+
+        self.userform = self.context["userform"]
+        self.profileform = self.context["profileform"]
+
+        self.render = render(self.request, self.template_name, self.context)
 
     def get(self, *args, **kwargs):
         return self.render
@@ -41,21 +50,44 @@ class BaseProfile(View):
 
 class Create(BaseProfile):
     def post(self, *args, **kwargs):
-        userform = self.context["userform"]
-        profileform = self.context["profileform"]
-
-        if not userform.is_valid() or not profileform.is_valid():
+        if not self.userform.is_valid() or not self.profileform.is_valid():
             return self.render
 
-        user = userform.save(commit=False)
-        user.set_password(userform.cleaned_data["password"])
-        user.save()
+        username = self.userform.cleaned_data.get("username")
+        password = self.userform.cleaned_data.get("password")
+        email = self.userform.cleaned_data.get("email")
+        first_name = self.profileform.cleaned_data.get("first_name")
+        last_name = self.profileform.cleaned_data.get("last_name")
 
-        profile = profileform.save(commit=False)
-        profile.user = user
-        profile.save()
+        if self.request.user.is_authenticated:
+            user = get_object_or_404(
+                User, username=self.request.user.username  # type: ignore
+            )
 
-        return render(self.request, "userprofile/create.html")
+            user.username = username
+
+            if password:
+                user.set_password(password)
+
+            user.email = email
+            user.first_name = first_name
+            user.last_name = last_name
+
+            user.save()
+
+        else:
+            user = self.userform.save(commit=False)
+            user.set_password(password)
+            user.save()
+
+            profile = self.profileform.save(commit=False)
+            profile.user = user
+            profile.save()
+
+        self.request.session["cart"] = self.cart
+        self.request.session.save()
+
+        return self.render
 
 
 class Update(View):
