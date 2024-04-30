@@ -3,8 +3,9 @@ import copy
 from . import forms
 from .models import UserProfile
 from django.views import View
-from django.shortcuts import render, get_object_or_404
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 
@@ -34,7 +35,9 @@ class BaseProfile(View):
             }
         else:
             self.context = {
-                "userform": forms.UserForm(data=self.request.POST or None),
+                "userform": forms.UserForm(
+                    data=self.request.POST or None,
+                ),
                 "profileform": forms.ProfileForm(
                     data=self.request.POST or None
                 ),
@@ -54,7 +57,7 @@ class BaseProfile(View):
 
 class Create(BaseProfile):
     def post(self, *args, **kwargs):
-        if not self.userform.is_valid():
+        if not self.userform.is_valid() or not self.profileform.is_valid():
             return self.render
 
         username = self.userform.cleaned_data.get("username")
@@ -107,7 +110,8 @@ class Create(BaseProfile):
         self.request.session["cart"] = self.cart
         self.request.session.save()
 
-        return self.render
+        messages.success(self.request, "Processo realizado com sucesso!")
+        return redirect("profile:create")
 
 
 class Update(View):
@@ -115,8 +119,38 @@ class Update(View):
 
 
 class Login(View):
-    pass
+    def post(self, *args, **kwargs):
+        username = self.request.POST.get("username")
+        password = self.request.POST.get("password")
+
+        if not username or not password:
+            messages.error(self.request, "Usuário ou senha inválidos.")
+            return redirect("profile:create")
+
+        authorize = authenticate(
+            self.request, username=username, password=password
+        )
+
+        if authorize:
+            messages.error(self.request, "Usuário ou senha inválidos.")
+            return redirect("product:list")
+
+        login(self.request, authorize)
+
+        messages.success(
+            self.request,
+            "Você fez login no sistema e pode concluir sua compra.",
+        )
+
+        return redirect("product:cart")
 
 
 class Logout(View):
-    pass
+    def get(self, *args, **kwargs):
+        cart = copy.deepcopy(self.request.session.get("cart", {}))
+        logout(self.request)
+
+        self.request.session["cart"] = cart
+        self.request.session.save()
+
+        return redirect("product:list")
