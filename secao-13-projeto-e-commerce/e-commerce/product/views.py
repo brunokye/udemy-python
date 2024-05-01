@@ -143,4 +143,13 @@ class ProductCart(View):
 
 
 class ProductCheckout(View):
-    pass
+    def get(self, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return redirect("profile:create")
+
+        context = {
+            "user": self.request.user,
+            "cart": self.request.session["cart"],
+        }
+
+        return render(self.request, "product/checkout.html", context)

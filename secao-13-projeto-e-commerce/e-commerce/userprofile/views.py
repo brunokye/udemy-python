@@ -58,6 +58,7 @@ class BaseProfile(View):
 class Create(BaseProfile):
     def post(self, *args, **kwargs):
         if not self.userform.is_valid() or not self.profileform.is_valid():
+            messages.error(self.request, "Verifique os campos!")
             return self.render
 
         username = self.userform.cleaned_data.get("username")
