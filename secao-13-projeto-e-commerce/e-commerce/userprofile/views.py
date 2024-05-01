@@ -127,15 +127,15 @@ class Login(View):
             messages.error(self.request, "Usuário ou senha inválidos.")
             return redirect("profile:create")
 
-        authorize = authenticate(
+        authorized = authenticate(
             self.request, username=username, password=password
         )
 
-        if authorize:
+        if not authorized:
             messages.error(self.request, "Usuário ou senha inválidos.")
             return redirect("product:list")
 
-        login(self.request, authorize)
+        login(self.request, user=authorized)
 
         messages.success(
             self.request,
