@@ -148,9 +148,7 @@ class ProductCheckout(View):
         if not self.request.user.is_authenticated:
             return redirect("profile:create")
 
-        profile = UserProfile.objects.get(
-            user=self.request.user
-        ).exists()  # type:ignore
+        profile = UserProfile.objects.get(user=self.request.user)
 
         if not profile:
             messages.error(self.request, "Usuário sem perfil.")
