@@ -5,6 +5,7 @@ from django.views import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from .models import Product, Variation
+from userprofile.models import UserProfile
 
 
 class ProductList(ListView):
@@ -146,6 +147,18 @@ class ProductCheckout(View):
     def get(self, *args, **kwargs):
         if not self.request.user.is_authenticated:
             return redirect("profile:create")
+
+        profile = UserProfile.objects.get(
+            user=self.request.user
+        ).exists()  # type:ignore
+
+        if not profile:
+            messages.error(self.request, "Usuário sem perfil.")
+            return redirect("profile:create")
+
+        if not self.request.session.get("cart"):
+            messages.error(self.request, "Carrinho vazio.")
+            return redirect("product:list")
 
         context = {
             "user": self.request.user,
