@@ -24,10 +24,6 @@ class ProductDetail(DetailView):
 
 class ProductAddItem(View):
     def get(self, *args, **kwargs):
-        # if self.request.session.get("cart"):
-        #     del self.request.session["cart"]
-        #     self.request.session.save()
-
         http_referer = self.request.META.get(
             "HTTP_REFERER", reverse("product:list")
         )
@@ -65,7 +61,7 @@ class ProductAddItem(View):
             cart_quantity += 1
 
             if variation_stock < cart_quantity:
-                messages.error(
+                messages.warning(
                     self.request,
                     f"Estoque insuficiente para {cart_quantity}x "
                     f"no produto {product_name}. Adicionamos "
@@ -137,9 +133,7 @@ class ProductRemoveItem(View):
 
 class ProductCart(View):
     def get(self, *args, **kwargs):
-        context = {
-            "cart": self.request.session.get("cart"),
-        }
+        context = {"cart": self.request.session.get("cart", {})}
         return render(self.request, "product/cart.html", context)
 
 
