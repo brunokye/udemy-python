@@ -1,13 +1,30 @@
 from .models import Order, OrderItem
 from product.models import Variation
 from django.views import View
+from django.views.generic import DetailView
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.urls import reverse
 from utils import format
 
 
-class Pay(View):
-    pass
+class DispatchLoginRequired(View):
+    def dispatch(self, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return redirect("profile:create")
+
+        return super().dispatch(*args, **kwargs)
+
+
+class Pay(DispatchLoginRequired, DetailView):
+    template_name = "order/pay.html"
+    model = Order
+    pk_url_kwarg = "pk"
+    context_object_name = "order"
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super().get_queryset(*args, **kwargs)
+        return qs.filter(user=self.request.user)
 
 
 class SaveOrder(View):
@@ -94,7 +111,7 @@ class SaveOrder(View):
 
         del self.request.session["cart"]
 
-        return redirect("order:list")
+        return redirect(reverse("order:pay", kwargs={"pk": order.pk}))
 
 
 class Detail(View):
