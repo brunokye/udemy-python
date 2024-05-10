@@ -1,30 +1,30 @@
 from .models import Order, OrderItem
 from product.models import Variation
 from django.views import View
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse
 from utils import format
 
 
-class DispatchLoginRequired(View):
+class DispatchLoginRequiredMixin(View):
     def dispatch(self, *args, **kwargs):
         if not self.request.user.is_authenticated:
             return redirect("profile:create")
 
         return super().dispatch(*args, **kwargs)
 
+    def get_queryset(self, *args, **kwargs):
+        qs = super().get_queryset(*args, **kwargs)  # type: ignore
+        return qs.filter(user=self.request.user)
 
-class Pay(DispatchLoginRequired, DetailView):
+
+class Pay(DispatchLoginRequiredMixin, DetailView):
     template_name = "order/pay.html"
     model = Order
     pk_url_kwarg = "pk"
     context_object_name = "order"
-
-    def get_queryset(self, *args, **kwargs):
-        qs = super().get_queryset(*args, **kwargs)
-        return qs.filter(user=self.request.user)
 
 
 class SaveOrder(View):
@@ -114,9 +114,16 @@ class SaveOrder(View):
         return redirect(reverse("order:pay", kwargs={"pk": order.pk}))
 
 
-class Detail(View):
-    pass
+class Detail(DispatchLoginRequiredMixin, DetailView):
+    model = Order
+    context_object_name = "order"
+    template_name = "order/detail.html"
+    pk_url_kwarg = "pk"
 
 
-class List(View):
-    pass
+class List(DispatchLoginRequiredMixin, ListView):
+    model = Order
+    context_object_name = "orders"
+    template_name = "order/list.html"
+    paginate_by = 2
+    ordering = ["-id"]
