@@ -115,10 +115,6 @@ class Create(BaseProfile):
         return redirect("profile:create")
 
 
-class Update(View):
-    pass
-
-
 class Login(View):
     def post(self, *args, **kwargs):
         username = self.request.POST.get("username")

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
+from django.db.models import Q
 from django.views import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -14,6 +15,37 @@ class ProductList(ListView):
     context_object_name = "products"
     paginate_by = 1
     ordering = ["-id"]
+
+
+class ProductSearch(ProductList):
+    # def get_queryset(self):
+    #     query = self.request.GET.get("q")
+
+    #     if query:
+    #         return Product.objects.filter(name__icontains=query)
+
+    #     return Product.objects.all()
+
+    def get_queryset(self, *args, **kwargs):
+        query = (
+            self.request.GET.get("search") or self.request.session["search"]
+        )
+        qs = super().get_queryset(*args, **kwargs)
+
+        if not query:
+            return qs
+
+        self.request.session["search"] = query
+
+        qs = qs.filter(
+            Q(name__icontains=query)
+            | Q(description_short__icontains=query)
+            | Q(description_long__icontains=query)
+        )
+
+        self.request.session.save()
+
+        return qs
 
 
 class ProductDetail(DetailView):

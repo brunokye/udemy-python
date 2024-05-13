@@ -6,6 +6,7 @@ from .views import (
     ProductRemoveItem,
     ProductCart,
     ProductCheckout,
+    ProductSearch,
 )
 
 app_name = "product"
@@ -17,4 +18,5 @@ urlpatterns = [
     path("removeitem/", ProductRemoveItem.as_view(), name="removeitem"),
     path("cart/", ProductCart.as_view(), name="cart"),
     path("checkout/", ProductCheckout.as_view(), name="checkout"),
+    path("search/", ProductSearch.as_view(), name="search"),
 ]
