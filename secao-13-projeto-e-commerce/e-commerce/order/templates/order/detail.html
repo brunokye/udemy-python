@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-
 {% load filters %}
+
+{% block page_title %}{{ order }}{% endblock page_title %}
 
 {% block content %}
 {% include "parcials/_order.html" %}
