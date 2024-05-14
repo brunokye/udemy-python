@@ -316,5 +316,18 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] Convertendo as views para Class Based
 - [x] Configurando o dotenv e o django-axes para deploy
 
-##### Seção 13: [Django com Python - Projeto E-commerce]()
+##### Seção 13: [Django com Python - Projeto E-commerce](https://github.com/brunokye/udemy-python/tree/main/secao-13-projeto-e-commerce)
+- [x] Arquivos e configurações iniciais
+- [x] Criando todos os models
+- [x] Slug automático, cadastro de produtos e configurando urls
+- [x] Listagem de produtos, detalhes e adicionar ao carrinho
+- [x] Cadastro e atualização de informações do usuário, login e logout
+- [x] Resumo da compra e salvando o pedido
+- [x] Detalhes do pedido
+- [x] Verificações de segurança
+- [x] Barra de pesquisa
+
+##
+
+##### Seção 14: [Testes e Introdução ao TDD no Python - unittest]()
 ...
