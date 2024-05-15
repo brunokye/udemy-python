@@ -34,4 +34,5 @@ class TestCalculator(unittest.TestCase):
             new_sum(5, "11")
 
 
-unittest.main(verbosity=2)
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
