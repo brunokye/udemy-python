@@ -329,5 +329,14 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 
 ##
 
-##### Seção 14: [Testes e Introdução ao TDD no Python - unittest]()
+##### Seção 14: [Testes e Introdução ao TDD no Python - unittest](https://github.com/brunokye/udemy-python/tree/main/secao-14-testes-e-tdd)
+- [x] Assertions
+- [x] Doctests
+- [x] Unittest
+- [x] Typehints
+
+##### Seção 15: [Type Annotations (Hints)]()
+...
+
+##### Seção 16: [Structural Pattern Matching]()
 ...
