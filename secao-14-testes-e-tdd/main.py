@@ -1,4 +1,4 @@
-from calculator import new_sum
+from src.calculator import new_sum
 
 print(new_sum(1, 2))
 print(new_sum(-10, 5))
