@@ -335,8 +335,11 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] Unittest
 - [x] Typehints
 
-##### Seção 15: [Type Annotations (Hints)]()
-...
+##### Seção 15: [Type Annotations (Hints)](https://github.com/brunokye/udemy-python/tree/main/secao-15-type-annotations)
+- [x] Type Annotations
 
-##### Seção 16: [Structural Pattern Matching]()
+##### Seção 16: [Structural Pattern Matching](https://github.com/brunokye/udemy-python/tree/main/secao-16-structural-pattern-matching)
+- [x] Structural Pattern Matching
+
+##### Seção 17: [Design Patterns - POO Avançado]()
 ...
