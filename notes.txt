@@ -1,6 +1,7 @@
 # Spacing
 print(f"\n{20 * '-'}\n")
 
+
 # Reset Django Password
 python manage.py shell
 
@@ -17,5 +18,15 @@ def reset_password(u, password):
 reset_password(username, password)
 example: reset_password('hello@djangowaves.com', 'averysecretpassword')
 
+
 # Secret Key
 python -c "import secrets; print(secrets.token_hex(32))"
+
+
+# print(class)
+class StringReprMixin:
+    def __str__(self):
+        return f"{self.__class__.__name__}: {self.__dict__} "
+
+    def __repr__(self):
+        return self.__str__()
