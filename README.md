@@ -341,5 +341,33 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 ##### Seção 16: [Structural Pattern Matching](https://github.com/brunokye/udemy-python/tree/main/secao-16-structural-pattern-matching)
 - [x] Structural Pattern Matching
 
-##### Seção 17: [Design Patterns - POO Avançado]()
+##### Seção 17: [Design Patterns - POO Avançado](https://github.com/brunokye/udemy-python/tree/main/secao-17-design-patterns)
+- [x] Introdução a Design Patterns
+- [x] Princípios SOLID
+- [x] Diagramas UML
+- [x] Creational - Simple Factory
+- [x] Creational - Factory Method
+- [x] Creational - Abstract Factory
+- [x] Creational - Singleton
+- [x] Creational - Monostate
+- [x] Creational - Builder
+- [x] Creational - Prototype
+- [x] Behavioral - Strategy
+- [x] Behavioral - Observer
+- [x] Behavioral - Command
+- [x] Behavioral - Template
+- [x] Behavioral - State
+- [x] Behavioral - Chain of Responsability
+- [x] Behavioral - Iterator
+- [x] Behavioral - Mediator
+- [x] Behavioral - Memento
+- [x] Structural - Adapter
+- [x] Structural - Facade
+- [x] Structural - Proxy
+- [x] Structural - Bridge
+- [x] Structural - Flyweight
+- [x] Structural - Composite
+- [x] Structural - Decorator
+
+##### Seção 18: [Expressões Regulares]()
 ...
