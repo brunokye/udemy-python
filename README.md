@@ -369,5 +369,22 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] Structural - Composite
 - [x] Structural - Decorator
 
-##### Seção 18: [Expressões Regulares]()
+##### Seção 18: [Expressões Regulares](https://github.com/brunokye/udemy-python/tree/main/secao-18-regular-expressions)
+- [x] 1. Introdução as Regular Expressions (RegExp)
+- [x] 2. Metacharacters
+- [x] 3. Quantifiers
+- [x] 4. Greedy e non-greedy (lazy)
+- [x] 5. Groups e Backreferences
+- [x] 6. Start, end e negation
+- [x] 7. Shorthands e flags
+- [x] 8. Shorthands e flags
+- [x] 9. Look ahead e behind
+- [x] 10. Validando IPv4
+- [x] 11. Validando CPF
+- [x] 12. Validando telefones
+- [x] 13. Validando senhas fortes
+- [x] 14. Validando números
+- [x] 15. Validando emails
+
+##### Seção 18: [Base de Dados Relacional - MySQL]()
 ...
