@@ -386,5 +386,5 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 14. Validando números
 - [x] 15. Validando emails
 
-##### Seção 18: [Base de Dados Relacional - MySQL]()
+##### Seção 19: [Relational Database - MySQL]()
 ...
