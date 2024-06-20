@@ -369,7 +369,7 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] Structural - Composite
 - [x] Structural - Decorator
 
-##### Seção 18: [Expressões Regulares](https://github.com/brunokye/udemy-python/tree/main/secao-18-regular-expressions)
+##### Seção 18: [Regular Expressions](https://github.com/brunokye/udemy-python/tree/main/secao-18-regular-expressions)
 - [x] 1. Introdução as Regular Expressions (RegExp)
 - [x] 2. Metacharacters
 - [x] 3. Quantifiers
