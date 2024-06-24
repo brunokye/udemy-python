@@ -1,0 +1,3 @@
+INSERT IGNORE INTO users_roles SELECT id AS user_id,
+(SELECT id FROM roles ORDER BY RAND() LIMIT 1) AS role_id
+FROM users ORDER BY RAND() LIMIT 5;
