@@ -369,7 +369,9 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] Structural - Composite
 - [x] Structural - Decorator
 
-##### Seção 18: [Regular Expressions](https://github.com/brunokye/udemy-python/tree/main/secao-18-regular-expressions)
+##
+
+##### Seção EXTRA 18: [Regular Expressions](https://github.com/brunokye/udemy-python/tree/main/secao-18-regular-expressions)
 - [x] 1. Introdução as Regular Expressions (RegExp)
 - [x] 2. Metacharacters
 - [x] 3. Quantifiers
@@ -386,5 +388,34 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 14. Validando números
 - [x] 15. Validando emails
 
-##### Seção 19: [Relational Database - MySQL]()
+##### Seção EXTRA 19: [Relational Database - MySQL](https://github.com/brunokye/udemy-python/tree/main/secao-19-relational-database)
+- [x] 1. insert
+- [x] 2. alias
+- [x] 3. where
+- [x] 4. dados fictícios
+- [x] 5. between
+- [x] 6. in
+- [x] 7. like
+- [x] 8. order
+- [x] 9. limit
+- [x] 10. insert select
+- [x] 11. delete
+- [x] 12. update
+- [x] 13. select tables
+- [x] 14. inner join
+- [x] 15. left join
+- [x] 16. right join
+- [x] 17. rand round
+- [x] 18. insert roles
+- [x] 19. insert users roles
+- [x] 20. insert ignore
+- [x] 21. select join
+- [x] 22. update join
+- [x] 23. delete join
+- [x] 24. group by
+- [x] 25. aggregate
+- [x] 26. complex select
+- [x] 27. exercises
+
+##### Seção EXTRA 20: [HTML5 e CSS3]()
 ...
