@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+
+    <style>
+        body {
+            color: white;
+            background: black;
+            font-family: sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        table caption {
+            caption-side: bottom;
+            font-style: italic;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        table td,
+        table th {
+            border: 1px solid white;
+            padding: 5px;
+            text-align: left;
+        }
+
+        tfoot td,
+        table th {
+            background: grey;
+        }
+
+        .responsive-table {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <div class="responsive-table">
+        <table>
+            <caption>Descrição da tabela.</caption>
+
+            <thead>
+                <tr>
+                    <th>Título 1</th>
+                    <th>Título 2</th>
+                    <th>Título 3</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Teste 1</td>
+                    <td>Teste 2</td>
+                    <td>Teste 3</td>
+                </tr>
+                <tr>
+                    <td>Teste 1</td>
+                    <td>Teste 2</td>
+                    <td>Teste 3</td>
+                </tr>
+                <tr>
+                    <td>Teste 1</td>
+                    <td>Teste 2</td>
+                    <td>Teste 3</td>
+                </tr>
+                <tr>
+                    <td>Teste 1</td>
+                    <td>Teste 2</td>
+                    <td>Teste 3</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <td colspan="3">Total: R$ 523,32</td>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>
