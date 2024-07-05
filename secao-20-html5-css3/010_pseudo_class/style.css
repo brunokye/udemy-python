@@ -1,0 +1,78 @@
+body {
+    color: white;
+    background: black;
+}
+
+.heading {
+    transform: all 300ms ease-int-out;
+}
+
+.heading:hover {
+    background: red;
+}
+
+a:link {
+    color: darkorange;
+}
+
+a:visited {
+    color: firebrick;
+}
+
+a:hover {
+    background: darkslateblue;
+    color: white;
+    text-decoration: none;
+}
+
+input:focus {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+    outline: none;
+}
+
+input:disabled {
+    cursor: not-allowed;
+}
+
+input:checked + p {
+ background: red;
+}
+
+.dad .list li:last-child:hover {
+    background: darkkhaki;
+}
+
+.div-not p:not(.p-mid) {
+    color: blue
+}
+
+.ul-nth {
+    width: fit-content;
+}
+
+.ul-nth li:nth-child(odd) {
+    background: lightgreen;
+}
+
+.ul-nth li:nth-child(even) {
+    background: lightpink;
+}
+
+.ul-nth li:nth-child(3n) {
+    background: lightsalmon
+}
+
+.p-pseudo-element::first-letter {
+    font-size: 40px;
+    float: left;
+    margin: 5px;
+}
+
+.p-pseudo-element::first-line {
+    background: lightslategray;
+}
+
+.p-pseudo-element::selection {
+    color: black;
+    background: white;
+}
