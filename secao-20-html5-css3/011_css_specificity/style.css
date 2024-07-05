@@ -1,0 +1,34 @@
+/* 
+    Style   ID  Class, attr and pseudo-class    Elements and pseudo-elements
+    1       1   0                               0
+    0       0   1                               0
+    0       1   1                               0
+*/
+
+body {
+    color: white;
+    background: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body#b.bclass p#p.p {
+    background: purple !important;
+}
+
+#p {
+    background: red;
+}
+
+#p.p {
+    background: yellow;
+}
+
+div {
+    color: initial;
+    background: lightblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body div #test{
+    font-family: initial;
+}
