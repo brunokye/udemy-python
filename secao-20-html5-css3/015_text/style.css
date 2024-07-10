@@ -1,0 +1,20 @@
+body {
+    color: white;
+    background: black;
+}
+
+p {
+    background-color: darkgrey;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    direction: ltr;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height: 25px;
+    text-align: left;
+    text-decoration: overline;
+    text-indent: 50px;
+    text-shadow: 2px 2px 1px darkred;
+    text-transform: capitalize;
+}
