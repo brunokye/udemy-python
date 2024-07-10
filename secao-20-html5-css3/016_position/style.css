@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+}
+
+body {
+    color: white;
+    background: black;
+}
+
+.dad {
+    height: 50vh;
+}
+
+.son01, .son02, .son03 {
+    width: 100px;
+    height: 100px;
+    background: rgb(139, 0, 0, 0.5);
+    margin: 10px;
+    position: static;
+}
+
+.son01 {
+    position: absolute;
+    margin-top: -50px;
+    margin-left: -50px;
+    z-index: 1;
+}
+
+.son02 {
+    position: fixed;
+    background: darkcyan;
+    top: 30%;
+}
+
+.son03 {
+    position: absolute;
+    background: darkgoldenrod;
+    top: 100px;
+    left: 100px;
+}
+
+.other {
+    position: absolute;
+    font-size: 20px;
+    background: darkgrey;
+    right: 0;
+    bottom: 0;
+}
+
+ul {
+    height: 100px;
+    overflow-y: auto;
+}
+
+ul li.sticky {
+    position: sticky;
+    background: darkkhaki;
+    top: 0;
+}
