@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background: black;
+    font-size: 12px;
+}
+
+p {
+    margin: 0 0 24px;
+}
+
+/* .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    background: darkgoldenrod;
+    height: 500px;
+}
+
+.flex-item {
+    width: 100%;
+    background: darkred;
+    margin: 10px;
+} */
+
+/* .flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    background: darkgoldenrod;
+}
+
+.flex-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 320px;
+    flex: 1 1 320px;
+    height: 100px;
+    background: darkred;
+} */
+
+/* .flex-item:nth-child(2) {
+    flex: 2 1 320px;
+    background: darkorchid;
+} */
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    background: darkgoldenrod;
+    height: 100px;
+}
+
+.flex-item {
+    width: 100%;
+    background: darkred;
+}
+
+.flex-item:nth-child(3) {
+    order: 1;
+    align-self: flex-end;
+}
+
+.flex-item:nth-child(4) {
+    align-self: center;
+}
+
+.flex-item:nth-child(5) {
+    align-self: stretch;
+}
+
+.two-columns {
+    display: flex;
+}
+
+.two-columns .col {
+    display: flex;
+    flex-direction: column;
+    background: darkgreen;
+    margin: 15px;
+    padding: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.gallery .img {
+    flex: 1 0 20%;
+    height: 50px;
+    background: darkmagenta;
+    margin: 10px;
+}
