@@ -417,5 +417,27 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 26. complex select
 - [x] 27. exercises
 
-##### Seção EXTRA 20: [HTML5 e CSS3]()
+##### Seção EXTRA 20: [HTML5 e CSS3](https://github.com/brunokye/udemy-python/tree/main/secao-20-html5-css3)
+- [x] 1. HTML Structure
+- [x] 2. Tags
+- [x] 3. Semantics
+- [x] 4. HTML & CSS
+- [x] 5. Box Model
+- [x] 6. Lists & Menus
+- [x] 7. Tables
+- [x] 8. Forms
+- [x] 9. CSS
+- [x] 10. Pseudo Class
+- [x] 11. CSS Specificity
+- [x] 12. Box Model
+- [x] 13. Float
+- [x] 14. Measurument Units
+- [x] 15. Text
+- [x] 16. Position
+- [x] 17. Media Queries
+- [x] 18. Radius Shadow
+- [x] 19. Flexbox
+- [x] 20. Grid
+
+##### Seção EXTRA 21: [Landing Page]()
 ...
