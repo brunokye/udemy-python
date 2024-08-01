@@ -1,5 +1,6 @@
 :root {
     --primary-color: #0A1128;
+    --secondary-color: #DC143C;
     --white-color: #FFFFFF;
     --light-gray-color: #EEEEEE;
     --gap: 3rem;
@@ -8,6 +9,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -76,11 +78,18 @@ a {
 }
 
 .menu {
-    background-color: var(--white-color);
-    border-bottom: 1px solid var(--light-gray-color);
     position: fixed;
     inset: 0 0 auto 0;
     width: 100%;
+    border-bottom: 0.1rem solid var(--light-gray-color);
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .menu h1 {
@@ -94,13 +103,15 @@ a {
 .menu ul {
     display: flex;
     list-style: none;
+    gap: 2rem;
 }
 
 .menu ul li a {
     display: block;
-    padding: 2rem;
+    padding: 2rem; 
     font-size: 1.8rem;
     position: relative;
+    color: var(--primary-color)
 }
 
 .menu ul li a::after {
@@ -117,12 +128,4 @@ a {
 .menu ul li a:hover::after {
     width: 50%;
     left: 25%;
-}
-
-.menu-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
 }
