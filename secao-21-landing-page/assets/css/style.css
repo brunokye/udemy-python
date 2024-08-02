@@ -3,6 +3,7 @@
     --secondary-color: #DC143C;
     --white-color: #FFFFFF;
     --light-gray-color: #EEEEEE;
+    --light-black-color: #454545;
     --gap: 3rem;
 }
 
@@ -161,7 +162,7 @@ p {
     justify-content: center;
 }
 
-.news-content {
+.news-content, .pricing-content {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -170,18 +171,18 @@ p {
     text-align: center;
 }
 
-.grid-content {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    min-height: 100vh;
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
     counter-reset: grid-counter;
+}
+
+.grid-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .grid-heading {
@@ -205,4 +206,48 @@ p {
     position: absolute;
     font-size: 5rem;
     inset: -1.5rem auto auto 1rem;
+}
+
+.responsive-table {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+table {
+    min-width: 360px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table td, table th {
+    white-space: nowrap;
+    padding: 0.5rem;
+    text-align: left;
+    border: 0.1rem solid var(--light-gray-color);
+}
+
+table th, table tfoot {
+    background: var(--light-gray-color);
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
