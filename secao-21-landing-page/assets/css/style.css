@@ -226,7 +226,7 @@ p {
     color: var(--primary-color);
 }
 
-.news-content, .pricing-content {
+.news-content, .pricing-content, .services-content {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
