@@ -148,6 +148,10 @@ p {
     height: 67px;
 }
 
+.close-menu, .back-to-top {
+    display: none;
+}
+
 .intro-content, .contact-content {
     display: grid;
     position: relative;
@@ -347,5 +351,59 @@ table th, table tfoot {
 
     .gallery-img img {
         width: 100%;
+    }
+
+    .menu {
+        display: none;
+        text-align: center;
+        bottom: 0;
+    }
+
+    .menu-content, .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .close-menu:checked~.menu {
+        display: flex;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+    }
+
+    .menu-spacing {
+        height: 0;
+    }
+
+    .back-to-top {
+        display: flex;
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--white-color);
+        width: 5rem;
+        height: 5rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: var(--primary-color);
+        transform: rotate(-90deg);
     }
 }
