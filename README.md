@@ -439,5 +439,18 @@ Este repositório contém todas as atividades do curso de Python 3 desenvolvidas
 - [x] 19. Flexbox
 - [x] 20. Grid
 
-##### Seção EXTRA 21: [Landing Page]()
-...
+##### Seção EXTRA 21: [Landing Page](https://github.com/brunokye/udemy-python/tree/main/secao-21-landing-page)
+- [x] 1. Estrutura da Landing Page
+- [x] 2. Links
+- [x] 3. Menu
+- [x] 4. CSS
+- [x] 5. Seção Intro
+- [x] 6. Seção News
+- [x] 7. Seção Grid
+- [x] 8. Seção Gallery
+- [x] 9. Seção Pricing
+- [x] 10. Seção Contact
+- [x] 11. Footer
+- [x] 12. Media Queries
+- [x] 13. Menu Mobile
+- [x] 14. Botão Back to Top
